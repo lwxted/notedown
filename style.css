@@ -1,0 +1,830 @@
+body .mjx-chtml {
+	font-size: 112.5% !important
+}
+
+body .mjx-chtml .mjx-chtml {
+	font-size: inherit !important
+}
+
+body div.title div.back {
+	position: absolute;
+	top: -17.5px;
+	left: 0
+}
+
+body div.title div.edit {
+	position: absolute;
+	top: -17.5px;
+	right: 0
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: "";
+	display: table
+}
+
+.clearfix:after {
+	clear: both
+}
+
+.clearfix {
+	zoom: 1
+}
+
+body {
+	margin: 100px auto 50px auto;
+	width: 650px
+}
+
+body div.title {
+	margin-left: 25px;
+	position: relative
+}
+
+body .content {
+	margin-left: 27px;
+	padding-left: 32.5px;
+	margin-top: 25px;
+	padding-bottom: 30px;
+	border-left: 2px solid #e8e8e8
+}
+
+@media (max-width: 1023px) {
+	body {
+		max-width: 92vw;
+		padding-left: 10px;
+		padding-right: 5px
+	}
+
+	body section.days {
+		padding-left: 0px;
+		border-left: none
+	}
+}
+
+@media (max-width: 1279px) and (min-width: 1024px) {
+	body {
+		padding-left: 200px
+	}
+}
+
+body div.toc {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	position: fixed;
+	width: 250px;
+	right: 75vw;
+	top: 125px;
+	padding-left: 15px;
+	border-left: 2px solid #eee;
+	overflow-y: scroll;
+	max-height: 70vh;
+	line-height: 1.0;
+	color: #888
+}
+
+body div.toc a {
+	font-size: 12px;
+	color: #888
+}
+
+body div.toc ul {
+	list-style-type: none;
+	font-weight: 600;
+	letter-spacing: 0.75px;
+	margin: 8px 0 8px 8px;
+	padding: 0
+}
+
+body div.toc ul li {
+	margin: 2px 0;
+	padding: 0
+}
+
+body div.toc ul li a:link,
+body div.toc ul li a:visited,
+body div.toc ul li a:hover,
+body div.toc ul li a:active {
+	text-decoration: none
+}
+
+body div.toc ul li a:hover {
+	color: #444
+}
+
+body div.toc ul li a:hover span.toc-counter {
+	color: #444
+}
+
+body div.toc ul li a:hover span.toc-counter:hover {
+	color: #fff
+}
+
+body div.toc ul li span.toc-counter {
+	color: #888;
+	margin-right: 5px;
+	padding-right: 2px;
+	font-size: 11.5px
+}
+
+body div.toc ul li span.toc-counter:hover {
+	color: #fff
+}
+
+body div.toc>ul {
+	margin: 0 0 0 8px
+}
+
+body div.toc>ul>li {
+	margin: 5px 0
+}
+
+@media (max-width: 1279px) {
+	body div.toc {
+		right: 70vw
+	}
+}
+
+@media (max-width: 1023px) {
+	body div.toc {
+		display: none
+	}
+}
+
+body {
+	font-family: "Source Sans Pro", "Helvetica", "STHeiti", "华文细黑", sans-serif;
+	color: #444
+}
+
+body a:hover,
+body a:active {
+	color: #5af;
+	text-decoration: none
+}
+
+body a,
+body a:visited {
+	color: #38d;
+	text-decoration: none
+}
+
+body a.counter-anchor {
+	text-decoration: none
+}
+
+body span.counter {
+	padding-left: 2px;
+	padding-right: 0px;
+	margin-left: -2px;
+	color: #444;
+	cursor: pointer;
+	font-weight: 600;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+body span.image-counter {
+	font-weight: 700;
+	color: #444
+}
+
+body span.counter:hover {
+	background-color: #444;
+	color: #fff
+}
+
+body code {
+	font-family: "Menlo", monospace;
+	font-size: 13px;
+	word-spacing: 0;
+	letter-spacing: 0
+}
+
+body pre {
+	margin: 15px 0 15px 0;
+	overflow: auto
+}
+
+body pre code {
+	font-size: 12px
+}
+
+body pre code mathjax {
+	font-size: 11.5px
+}
+
+body b {
+	font-weight: 600
+}
+
+body p {
+	font-size: 15px;
+	line-height: 1.4;
+	font-weight: 400;
+	margin: 15px 0 15px 0;
+	letter-spacing: 0.4px;
+	word-spacing: 2px
+}
+
+body p mathjax {
+	font-size: 14px
+}
+
+body p code {
+	margin-right: 2px;
+	word-spacing: -1px
+}
+
+body ul,
+body ol {
+	font-size: 14.5px;
+	padding: 0;
+	margin: 12px 0px 12px 18px
+}
+
+body ul p,
+body ol p {
+	margin: 8px 0;
+	font-size: 14.5px
+}
+
+body ul li,
+body ol li {
+	padding-left: 4px
+}
+
+body ol {
+	margin: 10px 0px 10px 14px
+}
+
+body ol li {
+	padding-left: 6px
+}
+
+body h1 {
+	color: #333;
+	font-size: 30px;
+	font-weight: 600;
+	margin: 30px 0 20px 0;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	letter-spacing: 2.5px;
+	word-spacing: 4.5px
+}
+
+body h1 span.section-counter {
+	font-size: 29px;
+	vertical-align: 0.5px;
+	margin-right: 12px
+}
+
+body h1 mathjax {
+	font-size: 29px
+}
+
+body h1 code {
+	font-family: 'Menlo', monospace;
+	font-size: 28px;
+	margin-left: 1px;
+	margin-right: 1px;
+	letter-spacing: 1px;
+	word-spacing: -2px
+}
+
+body h2 {
+	color: #333;
+	font-size: 20px;
+	font-weight: 600;
+	margin: 30px 0 20px 0;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	letter-spacing: 1.5px;
+	word-spacing: 4px
+}
+
+body h2 span.section-counter {
+	font-size: 19px;
+	vertical-align: 0.5px;
+	margin-right: 12px
+}
+
+body h2 mathjax {
+	font-size: 19px
+}
+
+body h2 code {
+	font-family: 'Menlo', monospace;
+	font-size: 18px;
+	margin-left: 1px;
+	margin-right: 1px;
+	letter-spacing: 1px;
+	word-spacing: -2px
+}
+
+body h3 {
+	color: #333;
+	font-size: 18px;
+	font-weight: 600;
+	margin: 25px 0 15px 0;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	word-spacing: 4px
+}
+
+body h3 span.section-counter {
+	font-size: 17px;
+	vertical-align: 0.5px;
+	margin-right: 12px
+}
+
+body h3 mathjax {
+	font-size: 17px
+}
+
+body h3 code {
+	font-family: 'Menlo', monospace;
+	font-size: 16px;
+	margin-left: 1px;
+	margin-right: 1px;
+	letter-spacing: 1px;
+	word-spacing: -2px
+}
+
+body h4 {
+	color: #333;
+	font-size: 17px;
+	font-weight: 600;
+	margin: 25px 0 12px 0;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	letter-spacing: 1px
+}
+
+body h4 span.section-counter {
+	font-size: 16px;
+	vertical-align: 0.5px;
+	margin-right: 12px
+}
+
+body h4 mathjax {
+	font-size: 16px
+}
+
+body h4 code {
+	font-family: 'Menlo', monospace;
+	font-size: 15px;
+	margin-left: 1px;
+	margin-right: 1px;
+	letter-spacing: 1px;
+	word-spacing: -2px
+}
+
+body h5 {
+	color: #333;
+	font-size: 16px;
+	font-weight: 600;
+	margin: 25px 0 12px 0;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	letter-spacing: 1px
+}
+
+body h5 span.section-counter {
+	font-size: 15px;
+	vertical-align: 0.5px;
+	margin-right: 12px
+}
+
+body h5 mathjax {
+	font-size: 15px
+}
+
+body h5 code {
+	font-family: 'Menlo', monospace;
+	font-size: 14px;
+	margin-left: 1px;
+	margin-right: 1px;
+	letter-spacing: 1px;
+	word-spacing: -2px
+}
+
+body h6 {
+	color: #333;
+	font-size: 15px;
+	font-weight: 600;
+	margin: 25px 0 10px 0;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	letter-spacing: 1px
+}
+
+body h6 span.section-counter {
+	font-size: 14px;
+	vertical-align: 0.5px;
+	margin-right: 12px
+}
+
+body h6 mathjax {
+	font-size: 14px
+}
+
+body h6 code {
+	font-family: 'Menlo', monospace;
+	font-size: 13px;
+	margin-left: 1px;
+	margin-right: 1px;
+	letter-spacing: 1px;
+	word-spacing: -2px
+}
+
+body div.figure {
+	margin-bottom: 25px;
+	margin-top: 25px
+}
+
+body div.figure>div.img {
+	max-width: 100%
+}
+
+body div.figure>div.img>img {
+	display: block;
+	max-width: 100%
+}
+
+body div.figure>div.caption {
+	color: #666;
+	font-size: 12px;
+	letter-spacing: 0.5px;
+	word-spacing: 2px;
+	margin-top: 10px
+}
+
+body div.figure>div.caption mathjax {
+	font-size: 12px
+}
+
+body div.figure>div.caption code {
+	font-size: 11px;
+	word-spacing: 0;
+	letter-spacing: 0
+}
+
+body div.figure>div.caption>div.image-counter-block {
+	margin-bottom: 5px
+}
+
+body div.figure>div.caption>div.image-counter-block>span.image-counter {
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	font-size: 13px
+}
+
+@media (max-width: 1023px) {
+	body div.figure {
+		max-width: 100%
+	}
+}
+
+@media (max-width: 1279px) {
+	body div.figure>div.caption>div.image-counter-block {
+		margin-top: 15px
+	}
+
+	body div.figure>div.img {
+		max-width: 100%
+	}
+}
+
+@media (min-width: 1280px) {
+	body div.figure {
+		width: 842.5px
+	}
+
+	body div.figure>div.img {
+		width: 552.5px;
+		margin-right: 40px;
+		float: left
+	}
+
+	body div.figure>div.caption {
+		width: 250px;
+		float: left
+	}
+}
+
+body div.definition {
+	border-radius: 3px;
+	border: 1px solid #eee;
+	background-color: #fafafa;
+	width: 90%;
+	margin: 15px 15px 15px 0;
+	padding: 2.5px 15px 2.5px 15px;
+	padding-left: 20px;
+	padding-right: 20px
+}
+
+body div.definition>div.title {
+	color: #333;
+	font-size: 15px;
+	font-weight: 600;
+	margin: 15px 0 12px 0;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	letter-spacing: 0.5px;
+	color: #444
+}
+
+body div.definition>div.title span.section-counter {
+	font-size: 14px;
+	vertical-align: 0.5px;
+	margin-right: 12px
+}
+
+body div.definition>div.title mathjax {
+	font-size: 14px
+}
+
+body div.definition>div.title code {
+	font-family: 'Menlo', monospace;
+	font-size: 13px;
+	margin-left: 1px;
+	margin-right: 1px;
+	letter-spacing: 1px;
+	word-spacing: -2px
+}
+
+body div.definition>div.explanation {
+	font-size: 14.5px;
+	color: #444;
+	margin: 10px 0 15px 0
+}
+
+body div.definition>div.explanation p {
+	font-size: 14.5px;
+	margin: 10px 0
+}
+
+body div.definition>div.explanation hr {
+	margin: 15px 0
+}
+
+body div.definition>div.explanation ol p,
+body div.definition>div.explanation ul p {
+	margin: 8px 0
+}
+
+body div.definition>div.explanation mathjax {
+	font-size: 13.5px
+}
+
+body div.definition>div.explanation div.figure {
+	max-width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px
+}
+
+body div.definition>div.explanation div.figure>div.img {
+	float: none
+}
+
+body div.definition>div.explanation div.figure>div.caption {
+	width: auto;
+	max-width: 100%;
+	float: none
+}
+
+body div.note {
+	border-left: 8px solid #e6d0a1;
+	background-color: #fcf8e3;
+	width: 90%;
+	margin: 15px 15px 15px 0;
+	padding: 2.5px 15px 2.5px 15px
+}
+
+body div.note>div.title {
+	color: #333;
+	font-size: 15px;
+	font-weight: 600;
+	margin: 15px 0 12px 0;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	letter-spacing: 0.5px;
+	color: #66512c
+}
+
+body div.note>div.title span.section-counter {
+	font-size: 14px;
+	vertical-align: 0.5px;
+	margin-right: 12px
+}
+
+body div.note>div.title mathjax {
+	font-size: 14px
+}
+
+body div.note>div.title code {
+	font-family: 'Menlo', monospace;
+	font-size: 13px;
+	margin-left: 1px;
+	margin-right: 1px;
+	letter-spacing: 1px;
+	word-spacing: -2px
+}
+
+body div.note>div.explanation {
+	font-size: 14.5px;
+	color: #8a6d3b;
+	margin: 10px 0 15px 0
+}
+
+body div.note>div.explanation p {
+	font-size: 14.5px;
+	margin: 10px 0
+}
+
+body div.note>div.explanation hr {
+	margin: 15px 0
+}
+
+body div.note>div.explanation ol p,
+body div.note>div.explanation ul p {
+	margin: 8px 0
+}
+
+body div.note>div.explanation mathjax {
+	font-size: 13.5px
+}
+
+body div.note>div.explanation div.figure {
+	max-width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px
+}
+
+body div.note>div.explanation div.figure>div.img {
+	float: none
+}
+
+body div.note>div.explanation div.figure>div.caption {
+	width: auto;
+	max-width: 100%;
+	float: none
+}
+
+body div.warn {
+	border-left: 8px solid #d2a8af;
+	background-color: #f2dede;
+	width: 90%;
+	margin: 15px 15px 15px 0;
+	padding: 2.5px 15px 2.5px 15px
+}
+
+body div.warn>div.title {
+	color: #333;
+	font-size: 15px;
+	font-weight: 600;
+	margin: 15px 0 12px 0;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	letter-spacing: 0.5px;
+	color: #843534
+}
+
+body div.warn>div.title span.section-counter {
+	font-size: 14px;
+	vertical-align: 0.5px;
+	margin-right: 12px
+}
+
+body div.warn>div.title mathjax {
+	font-size: 14px
+}
+
+body div.warn>div.title code {
+	font-family: 'Menlo', monospace;
+	font-size: 13px;
+	margin-left: 1px;
+	margin-right: 1px;
+	letter-spacing: 1px;
+	word-spacing: -2px
+}
+
+body div.warn>div.explanation {
+	font-size: 14.5px;
+	color: #843534;
+	margin: 10px 0 15px 0
+}
+
+body div.warn>div.explanation p {
+	font-size: 14.5px;
+	margin: 10px 0
+}
+
+body div.warn>div.explanation hr {
+	margin: 15px 0
+}
+
+body div.warn>div.explanation ol p,
+body div.warn>div.explanation ul p {
+	margin: 8px 0
+}
+
+body div.warn>div.explanation mathjax {
+	font-size: 13.5px
+}
+
+body div.warn>div.explanation div.figure {
+	max-width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px
+}
+
+body div.warn>div.explanation div.figure>div.img {
+	float: none
+}
+
+body div.warn>div.explanation div.figure>div.caption {
+	width: auto;
+	max-width: 100%;
+	float: none
+}
+
+body div.emph {
+	color: #333;
+	font-size: 16px;
+	font-weight: 600;
+	margin: 22.5px 0 10px 0;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	letter-spacing: 0.75px;
+	line-height: 1.4
+}
+
+body div.emph span.section-counter {
+	font-size: 15px;
+	vertical-align: 0.5px;
+	margin-right: 12px
+}
+
+body div.emph mathjax {
+	font-size: 15px
+}
+
+body div.emph code {
+	font-family: 'Menlo', monospace;
+	font-size: 14px;
+	margin-left: 1px;
+	margin-right: 1px;
+	letter-spacing: 1px;
+	word-spacing: -2px
+}
+
+body div.center {
+	text-align: center;
+	margin: 18px auto 18px auto;
+	max-width: 90%
+}
+
+body hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px dashed #ddd;
+	margin: 25px 0 25px 0;
+	padding: 0
+}
+
+body ul.checklist {
+	list-style-type: none;
+	letter-spacing: 0.3px;
+	word-spacing: 2px
+}
+
+body ul.checklist>li.checklist_item {
+	margin-top: 8px;
+	margin-bottom: 8px
+}
+
+body ul.checklist>li.checklist_item>input[type="checkbox"] {
+	margin-left: -22px;
+	vertical-align: top;
+	margin-top: 4px
+}
+
+body ul.checklist>li.checklist_item>input[type="checkbox"]:checked~* {
+	text-decoration: line-through
+}
+
+body ul.checklist>li.checklist_item>label {
+	margin-left: 8px;
+	line-height: 1.4;
+	display: inline-block
+}
+
+body ul.checklist>li.checklist_item>div.checklist_details {
+	margin-left: 3px
+}

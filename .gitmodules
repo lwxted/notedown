@@ -1,0 +1,9 @@
+[submodule "externals/texme"]
+	path = externals/texme
+	url = git@github.com:susam/texme.git
+[submodule "externals/marked"]
+	path = externals/marked
+	url = git@github.com:markedjs/marked.git
+[submodule "externals/MathJax"]
+	path = externals/MathJax
+	url = git@github.com:mathjax/MathJax.git
