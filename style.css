@@ -221,6 +221,10 @@ body b {
 	font-weight: 600
 }
 
+body strong {
+	font-weight: 600
+}
+
 body p {
 	font-size: 15px;
 	line-height: 1.4;
@@ -265,7 +269,7 @@ body ol li {
 	padding-left: 6px
 }
 
-body h1 {
+body div.title {
 	color: #333;
 	font-size: 30px;
 	font-weight: 600;
@@ -276,17 +280,17 @@ body h1 {
 	word-spacing: 4.5px
 }
 
-body h1 span.section-counter {
+body div.title span.section-counter {
 	font-size: 29px;
 	vertical-align: 0.5px;
 	margin-right: 12px
 }
 
-body h1 mathjax {
+body div.title mathjax {
 	font-size: 29px
 }
 
-body h1 code {
+body div.title code {
 	font-family: 'Menlo', monospace;
 	font-size: 28px;
 	margin-left: 1px;
@@ -295,7 +299,7 @@ body h1 code {
 	word-spacing: -2px
 }
 
-body h2 {
+body h1 {
 	color: #333;
 	font-size: 20px;
 	font-weight: 600;
@@ -306,17 +310,17 @@ body h2 {
 	word-spacing: 4px
 }
 
-body h2 span.section-counter {
+body h1 span.section-counter {
 	font-size: 19px;
 	vertical-align: 0.5px;
 	margin-right: 12px
 }
 
-body h2 mathjax {
+body h1 mathjax {
 	font-size: 19px
 }
 
-body h2 code {
+body h1 code {
 	font-family: 'Menlo', monospace;
 	font-size: 18px;
 	margin-left: 1px;
@@ -325,7 +329,7 @@ body h2 code {
 	word-spacing: -2px
 }
 
-body h3 {
+body h2 {
 	color: #333;
 	font-size: 18px;
 	font-weight: 600;
@@ -335,19 +339,48 @@ body h3 {
 	word-spacing: 4px
 }
 
-body h3 span.section-counter {
+body h2 span.section-counter {
 	font-size: 17px;
 	vertical-align: 0.5px;
 	margin-right: 12px
 }
 
-body h3 mathjax {
+body h2 mathjax {
 	font-size: 17px
+}
+
+body h2 code {
+	font-family: 'Menlo', monospace;
+	font-size: 16px;
+	margin-left: 1px;
+	margin-right: 1px;
+	letter-spacing: 1px;
+	word-spacing: -2px
+}
+
+body h3 {
+	color: #333;
+	font-size: 17px;
+	font-weight: 600;
+	margin: 25px 0 12px 0;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	letter-spacing: 1px
+}
+
+body h3 span.section-counter {
+	font-size: 16px;
+	vertical-align: 0.5px;
+	margin-right: 12px
+}
+
+body h3 mathjax {
+	font-size: 16px
 }
 
 body h3 code {
 	font-family: 'Menlo', monospace;
-	font-size: 16px;
+	font-size: 15px;
 	margin-left: 1px;
 	margin-right: 1px;
 	letter-spacing: 1px;
@@ -356,7 +389,7 @@ body h3 code {
 
 body h4 {
 	color: #333;
-	font-size: 17px;
+	font-size: 16px;
 	font-weight: 600;
 	margin: 25px 0 12px 0;
 	letter-spacing: 1px;
@@ -365,18 +398,18 @@ body h4 {
 }
 
 body h4 span.section-counter {
-	font-size: 16px;
+	font-size: 15px;
 	vertical-align: 0.5px;
 	margin-right: 12px
 }
 
 body h4 mathjax {
-	font-size: 16px
+	font-size: 15px
 }
 
 body h4 code {
 	font-family: 'Menlo', monospace;
-	font-size: 15px;
+	font-size: 14px;
 	margin-left: 1px;
 	margin-right: 1px;
 	letter-spacing: 1px;
@@ -385,27 +418,27 @@ body h4 code {
 
 body h5 {
 	color: #333;
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: 600;
-	margin: 25px 0 12px 0;
+	margin: 25px 0 10px 0;
 	letter-spacing: 1px;
 	word-spacing: 2px;
 	letter-spacing: 1px
 }
 
 body h5 span.section-counter {
-	font-size: 15px;
+	font-size: 14px;
 	vertical-align: 0.5px;
 	margin-right: 12px
 }
 
 body h5 mathjax {
-	font-size: 15px
+	font-size: 14px
 }
 
 body h5 code {
 	font-family: 'Menlo', monospace;
-	font-size: 14px;
+	font-size: 13px;
 	margin-left: 1px;
 	margin-right: 1px;
 	letter-spacing: 1px;
