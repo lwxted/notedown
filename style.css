@@ -213,7 +213,7 @@ body pre code {
 	font-size: 12px
 }
 
-body pre code mathjax {
+body pre code mjx-container {
 	font-size: 11.5px
 }
 
@@ -231,10 +231,10 @@ body p {
 	font-weight: 400;
 	margin: 15px 0 15px 0;
 	letter-spacing: 0.4px;
-	word-spacing: 2px
+	word-spacing: 2px;
 }
 
-body p mathjax {
+body p mjx-container {
 	font-size: 14px
 }
 
@@ -247,7 +247,7 @@ body ul,
 body ol {
 	font-size: 14.5px;
 	padding: 0;
-	margin: 12px 0px 12px 18px
+	margin: 10px 0px 10px 14px;
 }
 
 body ul p,
@@ -258,15 +258,9 @@ body ol p {
 
 body ul li,
 body ol li {
-	padding-left: 4px
-}
-
-body ol {
-	margin: 10px 0px 10px 14px
-}
-
-body ol li {
-	padding-left: 6px
+	padding-left: 4px;
+	letter-spacing: 0.4px;
+	word-spacing: 1px;
 }
 
 body div.title {
@@ -275,9 +269,8 @@ body div.title {
 	font-weight: 600;
 	margin: 30px 0 20px 0;
 	letter-spacing: 1px;
-	word-spacing: 2px;
 	letter-spacing: 2.5px;
-	word-spacing: 4.5px
+	word-spacing: 4.5px;
 }
 
 body div.title span.section-counter {
@@ -286,7 +279,7 @@ body div.title span.section-counter {
 	margin-right: 12px
 }
 
-body div.title mathjax {
+body div.title mjx-container {
 	font-size: 29px
 }
 
@@ -316,7 +309,7 @@ body h1 span.section-counter {
 	margin-right: 12px
 }
 
-body h1 mathjax {
+body h1 mjx-container {
 	font-size: 19px
 }
 
@@ -345,7 +338,7 @@ body h2 span.section-counter {
 	margin-right: 12px
 }
 
-body h2 mathjax {
+body h2 mjx-container {
 	font-size: 17px
 }
 
@@ -374,7 +367,7 @@ body h3 span.section-counter {
 	margin-right: 12px
 }
 
-body h3 mathjax {
+body h3 mjx-container {
 	font-size: 16px
 }
 
@@ -403,7 +396,7 @@ body h4 span.section-counter {
 	margin-right: 12px
 }
 
-body h4 mathjax {
+body h4 mjx-container {
 	font-size: 15px
 }
 
@@ -432,7 +425,7 @@ body h5 span.section-counter {
 	margin-right: 12px
 }
 
-body h5 mathjax {
+body h5 mjx-container {
 	font-size: 14px
 }
 
@@ -461,7 +454,7 @@ body h6 span.section-counter {
 	margin-right: 12px
 }
 
-body h6 mathjax {
+body h6 mjx-container {
 	font-size: 14px
 }
 
@@ -496,7 +489,7 @@ body div.figure>div.caption {
 	margin-top: 10px
 }
 
-body div.figure>div.caption mathjax {
+body div.figure>div.caption mjx-container {
 	font-size: 12px
 }
 
@@ -540,12 +533,12 @@ body div.figure>div.caption>div.image-counter-block>span.image-counter {
 	body div.figure>div.img {
 		width: 552.5px;
 		margin-right: 40px;
-		float: left
+		float: none;
 	}
 
 	body div.figure>div.caption {
 		width: 250px;
-		float: left
+		float: none;
 	}
 }
 
@@ -577,7 +570,7 @@ body div.definition>div.title span.section-counter {
 	margin-right: 12px
 }
 
-body div.definition>div.title mathjax {
+body div.definition>div.title mjx-container {
 	font-size: 14px
 }
 
@@ -610,7 +603,7 @@ body div.definition>div.explanation ul p {
 	margin: 8px 0
 }
 
-body div.definition>div.explanation mathjax {
+body div.definition>div.explanation mjx-container {
 	font-size: 13.5px
 }
 
@@ -630,8 +623,16 @@ body div.definition>div.explanation div.figure>div.caption {
 	float: none
 }
 
+body blockquote {
+	border-left: 5px solid #ccc;
+	background-color: #f6f6f6;
+	width: 90%;
+	margin: 15px 15px 15px 0;
+	padding: 2.5px 15px 2.5px 15px;
+}
+
 body div.note {
-	border-left: 8px solid #e6d0a1;
+	border-left: 5px solid #e6d0a1;
 	background-color: #fcf8e3;
 	width: 90%;
 	margin: 15px 15px 15px 0;
@@ -655,7 +656,7 @@ body div.note>div.title span.section-counter {
 	margin-right: 12px
 }
 
-body div.note>div.title mathjax {
+body div.note>div.title mjx-container {
 	font-size: 14px
 }
 
@@ -688,7 +689,7 @@ body div.note>div.explanation ul p {
 	margin: 8px 0
 }
 
-body div.note>div.explanation mathjax {
+body div.note>div.explanation mjx-container {
 	font-size: 13.5px
 }
 
@@ -709,7 +710,7 @@ body div.note>div.explanation div.figure>div.caption {
 }
 
 body div.warn {
-	border-left: 8px solid #d2a8af;
+	border-left: 5px solid #d2a8af;
 	background-color: #f2dede;
 	width: 90%;
 	margin: 15px 15px 15px 0;
@@ -733,7 +734,7 @@ body div.warn>div.title span.section-counter {
 	margin-right: 12px
 }
 
-body div.warn>div.title mathjax {
+body div.warn>div.title mjx-container {
 	font-size: 14px
 }
 
@@ -766,7 +767,7 @@ body div.warn>div.explanation ul p {
 	margin: 8px 0
 }
 
-body div.warn>div.explanation mathjax {
+body div.warn>div.explanation mjx-container {
 	font-size: 13.5px
 }
 
@@ -803,7 +804,7 @@ body div.emph span.section-counter {
 	margin-right: 12px
 }
 
-body div.emph mathjax {
+body div.emph mjx-container {
 	font-size: 15px
 }
 
