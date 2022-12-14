@@ -10,6 +10,12 @@
         const markdown_path = externals_root + marked_relative_path;
         const mathjax_path = externals_root + mathjax_relative_path;
 
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = notedown_root + 'style.css';
+        document.head.appendChild(link);
+
         let marked;
 
         const loadjs = function (url, callback) {
@@ -29,12 +35,13 @@
         };
 
         const renderPage = function () {
-            console.log((new marked.Lexer()).blockTokens(getBodyContent()));
             window.document.body.innerHTML = `
+            <div class="rendered">
                 <div class="title">
                     ${document.title}
                 </div>
-                ${marked.parse(getBodyContent())}`;
+                ${marked.parse(getBodyContent())}
+            </div>`;
         };
 
         const calloutBlockExtension = {
@@ -127,12 +134,6 @@
         }
 
         const main = function () {
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = notedown_root + 'style.css';
-            document.head.appendChild(link);
-
             loadjs(markdown_path, function () {
                 marked = window.marked;
                 extendMarked();
