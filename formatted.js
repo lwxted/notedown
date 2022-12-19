@@ -1,7 +1,6 @@
 (
     function () {
         'use strict';
-
         const scripts = document.getElementsByTagName("script");
         const notedown_root = scripts[scripts.length - 1].src + "/../";
         const externals_root = scripts[scripts.length - 1].src + "/../externals/";
@@ -10,13 +9,15 @@
         const markdown_path = externals_root + marked_relative_path;
         const mathjax_path = externals_root + mathjax_relative_path;
 
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = notedown_root + 'style.css';
-        document.head.appendChild(link);
-
         let marked;
+
+        const loadCss = function (url) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = url;
+            document.head.appendChild(link);
+        };
 
         const loadjs = function (url, callback) {
             const script = window.document.createElement('script');
@@ -51,7 +52,7 @@
                 return src.match(/\{(?:note|def|warn)\}\n/)?.index;
             },
             tokenizer(src, _tokens) {
-                const rule = /^\{(note|def|warn)\}\n(.*\n)([\S\s]*?)\{(?:note|def|warn)\}(?:\n\n+|$)/;
+                const rule = /^\{(note|def|warn)(:[1-9]\d*)?\}\n(.*\n)([\S\s]*?)\{\/(?:note|def|warn)\2?\}(?:\n\n+|$)/;
                 const match = rule.exec(src);
                 if (match) {
                     const token = {
@@ -59,16 +60,13 @@
                         style: match[1].trim(),
                         raw: match[0],
                         text: match[0].trim(),
-                        title: match[2].trim(),
+                        title: match[3].trim(),
                         titleTokens: [],
-                        content: match[3].trim(),
+                        content: match[4].trim(),
                         contentTokens: [],
                     }
                     this.lexer.inline(token.title, token.titleTokens);
-                    const segments = token.content.split('\n\n');
-                    for (let i = 0; i < segments.length; ++i) {
-                        token.contentTokens.push(...this.lexer.blockTokens(segments[i]));
-                    }
+                    token.contentTokens.push(...this.lexer.blockTokens(token.content));
                     return token;
                 }
             },
@@ -134,6 +132,8 @@
         }
 
         const main = function () {
+            loadCss(notedown_root + 'style.css');
+
             loadjs(markdown_path, function () {
                 marked = window.marked;
                 extendMarked();
@@ -160,6 +160,11 @@
                 window.MathJax.typesetPromise();
             });
         }
+
+        if (window.IMPORT_GUARD) {
+            return;
+        }
+        window.IMPORT_GUARD = true;
 
         main();
     }
