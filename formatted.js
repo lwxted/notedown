@@ -5,7 +5,7 @@
         const notedown_root = scripts[scripts.length - 1].src + "/../";
         const externals_root = scripts[scripts.length - 1].src + "/../externals/";
         const marked_relative_path = "marked/marked.min.js";
-        const mathjax_relative_path = "MathJax/es5/tex-svg.js";
+        const mathjax_relative_path = "MathJax/es5/tex-chtml.js";
         const markdown_path = externals_root + marked_relative_path;
         const mathjax_path = externals_root + mathjax_relative_path;
 
@@ -43,6 +43,32 @@
                 </div>
                 ${marked.parse(getBodyContent())}
             </div>`;
+        };
+
+        const highlightInlineExtension = {
+            name: 'highlight',
+            level: 'inline',
+            start(src) {
+                return src.match(/^(==+)([^=]|[^=][\s\S]*?[^=])\1(?!=)/)?.index;
+            },
+            tokenizer(src) {
+                const rule = /^(==+)([^=]|[^=][\s\S]*?[^=])\1(?!=)/;
+                const match = rule.exec(src);
+                if (match) {
+                    console.log(match, src);
+                    const token = {
+                        type: 'highlight',
+                        raw: match[0],
+                        text: match[2],
+                        tokens: [],
+                    }
+                    this.lexer.inline(token.text, token.tokens);
+                    return token;
+                }
+            },
+            renderer(token) {
+                return `<mark>${this.parser.parseInline(token.tokens)}</mark>`;
+            },
         };
 
         const calloutBlockExtension = {
@@ -127,7 +153,7 @@
             };
             marked.use({
                 renderer,
-                extensions: [calloutBlockExtension]
+                extensions: [calloutBlockExtension, highlightInlineExtension],
             });
         }
 

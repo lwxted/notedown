@@ -237,7 +237,7 @@ body p {
 	font-weight: 400;
 	margin: 15px 0 15px 0;
 	letter-spacing: 0.4px;
-	word-spacing: 2px;
+	word-spacing: 1.5px;
 }
 
 body p mjx-container {
@@ -253,12 +253,12 @@ body ul,
 body ol {
 	font-size: 14.5px;
 	padding: 0;
-	margin: 10px 0px 10px 15px;
+	margin: 5px 0px 5px 16px;
 }
 
 body ul p,
 body ol p {
-	margin: 8px 0;
+	margin: 6px 0;
 	font-size: 14.5px
 }
 
@@ -267,6 +267,7 @@ body ol li {
 	padding-left: 4px;
 	letter-spacing: 0.4px;
 	word-spacing: 1px;
+	margin: 6px 0;
 }
 
 body div.title {
@@ -868,19 +869,67 @@ body ul.checklist>li.checklist_item>div.checklist_details {
 	margin-left: 3px
 }
 
-body table {
-	margin: 10px;
+table {
+	border: 1px solid #ddd;
+	border-collapse: separate;
+	border-left: 0;
+	border-radius: 2px;
+	border-spacing: 0px;
+	margin: 15px 0;
 }
 
-body table thead tr th {
+thead {
+	display: table-header-group;
+	vertical-align: middle;
+	border-color: inherit;
+	border-collapse: separate;
+}
+
+tr {
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+
+td {
+	border-top: 1px solid #ddd;
+}
+
+thead:first-child tr:first-child th:first-child,
+tbody:first-child tr:first-child td:first-child {
+	border-radius: 2px 0 0 0;
+}
+
+thead:last-child tr:last-child th:first-child,
+tbody:last-child tr:last-child td:first-child {
+	border-radius: 0 0 0 2px;
+}
+
+th,
+td {
+	vertical-align: top;
+	border-left: 1px solid #ddd;
+}
+
+tr th {
 	font-weight: 600;
-	letter-spacing: 1px;
-	word-spacing: 2px;
+	letter-spacing: 0.6px;
+	word-spacing: 1.5px;
+	padding: 8px 10px;
 }
 
-body table tbody tr td {
+tr td {
 	font-weight: 400;
-	letter-spacing: 0.4px;
-	word-spacing: 2px;
-	padding: 5px;
+	letter-spacing: 0.3px;
+	word-spacing: 0.8px;
+	padding: 6px 10px;
+	font-size: 14.5px;
+}
+
+tr td code {
+	font-size: 12.5px;
+}
+
+mark {
+	background-color: rgba(253, 215, 134, 0.5);
 }
