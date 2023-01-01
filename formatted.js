@@ -55,7 +55,6 @@
                 const rule = /^(==+)([^=]|[^=][\s\S]*?[^=])\1(?!=)/;
                 const match = rule.exec(src);
                 if (match) {
-                    console.log(match, src);
                     const token = {
                         type: 'highlight',
                         raw: match[0],
