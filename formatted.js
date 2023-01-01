@@ -26,13 +26,8 @@
             window.document.head.appendChild(script);
         };
 
-        function htmlDecode(input) {
-            var doc = new DOMParser().parseFromString(input, "text/html");
-            return doc.documentElement.textContent;
-        }
-
         const getBodyContent = function () {
-            return htmlDecode(window.document.body.innerHTML.trim());
+            return window.document.getElementsByTagName("textarea")[0].value;
         };
 
         const renderPage = function () {
