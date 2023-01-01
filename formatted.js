@@ -65,48 +65,56 @@
             },
         };
 
-        const calloutBlockExtension = {
-            name: 'callout',
-            level: 'block',
-            start(src) {
-                return src.match(/\{(?:note|def|warn)\}\n/)?.index;
-            },
-            tokenizer(src, _tokens) {
-                const rule = /^\{(note|def|warn)(:[1-9]\d*)?\}\n(.*\n)([\S\s]*?)\{\/(?:note|def|warn)\2?\}(?:\n\n+|$)/;
-                const match = rule.exec(src);
-                if (match) {
-                    const token = {
-                        type: 'callout',
-                        style: match[1].trim(),
-                        raw: match[0],
-                        text: match[0].trim(),
-                        title: match[3].trim(),
-                        titleTokens: [],
-                        content: match[4].trim(),
-                        contentTokens: [],
-                    }
-                    this.lexer.inline(token.title, token.titleTokens);
-                    token.contentTokens.push(...this.lexer.blockTokens(token.content));
-                    return token;
-                }
-            },
-            renderer(token) {
-                const classMap = {
-                    'note': "note",
-                    'warn': "warn",
-                    'def': "definition",
-                };
-                return `<div class="${classMap[token.style]}">
-                            <div class="title">
-                                ${this.parser.parseInline(token.titleTokens)}
-                            </div>
-                            <div class="explanation">
-                                ${this.parser.parse(token.contentTokens)}
-                            </div>
-                        </div>
-                `;
+        const calloutBlockExtensionFactory = function (environmentName, renderedClass) {
+            if (!['note', 'def', 'warn'].includes(environmentName)) {
+                throw new Error(`Environment ${environmentName} invalid`);
             }
-        };
+            return {
+                name: environmentName,
+                level: 'block',
+                start(src) {
+                    const regex = `\\{(?:${environmentName})\\}\n`;
+                    return src.match(new RegExp(regex))?.index;
+                },
+                tokenizer(src, _tokens) {
+                    const regex = `^\\{(${environmentName})(:[1-9]\\d*)?\\}\n(.*\n)([\\S\\s]*?)\\{\/(?:${environmentName})\\2?\\}(?:\n\n*|$)`;
+                    const rule = new RegExp(regex);
+                    const match = rule.exec(src);
+                    if (match) {
+                        const token = {
+                            type: environmentName,
+                            style: renderedClass,
+                            raw: match[0],
+                            text: match[0].trim(),
+                            title: match[3].trim(),
+                            titleTokens: [],
+                            content: match[4].trim(),
+                            contentTokens: [],
+                        }
+                        this.lexer.inline(token.title, token.titleTokens);
+                        token.contentTokens.push(...this.lexer.blockTokens(token.content));
+                        return token;
+                    }
+                },
+                renderer(token) {
+                    return `<div class="${token.style}">
+                                <div class="title">
+                                    ${this.parser.parseInline(token.titleTokens)}
+                                </div>
+                                <div class="explanation">
+                                    ${this.parser.parse(token.contentTokens)}
+                                </div>
+                            </div>
+                    `;
+                }
+            }
+        }
+
+        const calloutBlockExtensions = [
+            calloutBlockExtensionFactory("def", "definition"),
+            calloutBlockExtensionFactory("note", "note"),
+            calloutBlockExtensionFactory("warn", "warn"),
+        ];
 
         const extendMarked = function () {
             const headerCounters = [0, 0, 0, 0, 0, 0];
@@ -147,7 +155,7 @@
             };
             marked.use({
                 renderer,
-                extensions: [calloutBlockExtension, highlightInlineExtension],
+                extensions: [...calloutBlockExtensions, highlightInlineExtension],
             });
         }
 
