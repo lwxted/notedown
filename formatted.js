@@ -2,8 +2,8 @@
     function () {
         'use strict';
         const scripts = document.getElementsByTagName("script");
-        const notedown_root = scripts[scripts.length - 1].src + "/../";
-        const externals_root = scripts[scripts.length - 1].src + "/../externals/";
+        const notedown_root = scripts[0].src + "/../";
+        const externals_root = scripts[0].src + "/../externals/";
         const marked_relative_path = "marked/marked.min.js";
         const mathjax_relative_path = "MathJax/es5/tex-chtml.js";
         const markdown_path = externals_root + marked_relative_path;
