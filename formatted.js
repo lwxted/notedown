@@ -44,24 +44,81 @@
             name: 'highlight',
             level: 'inline',
             start(src) {
-                return src.match(/^(==+)([^=]|[^=][\s\S]*?[^=])\1(?!=)/)?.index;
+                return src.match(/(==+)/)?.index;
             },
             tokenizer(src) {
                 const rule = /^(==+)([^=]|[^=][\s\S]*?[^=])\1(?!=)/;
                 const match = rule.exec(src);
                 if (match) {
+                    console.log(match);
                     const token = {
                         type: 'highlight',
                         raw: match[0],
                         text: match[2],
-                        tokens: [],
+                        tokens: this.lexer.inlineTokens(match[2]),
                     }
-                    this.lexer.inline(token.text, token.tokens);
                     return token;
                 }
             },
             renderer(token) {
                 return `<mark>${this.parser.parseInline(token.tokens)}</mark>`;
+            },
+        };
+
+        const coloredTextInlineExtension = {
+            name: 'color',
+            level: 'inline',
+            start(src) {
+                return src.match(/\{c\:(\S+)\}/)?.index;
+            },
+            tokenizer(src) {
+                console.log(src);
+                const rule = /^\{c\:(\S+)\}([\s\S]+?)\{\/c\}/;
+                const match = rule.exec(src);
+                if (match) {
+                    console.log(match);
+                    const token = {
+                        type: 'color',
+                        raw: match[0],
+                        text: match[2],
+                        color: match[1],
+                        tokens: this.lexer.inlineTokens(match[2]),
+                    };
+                    return token;
+                }
+            },
+            renderer(token) {
+                return `<span style="color:${token.color}">
+                    ${this.parser.parseInline(token.tokens)}
+                </span>`;
+            },
+        };
+
+        const hiddenTextInlineExtension = {
+            name: 'hidden',
+            level: 'inline',
+            start(src) {
+                return src.match(/\{h\}/)?.index;
+            },
+            tokenizer(src) {
+                console.log(src);
+                const rule = /^\{h\}([\s\S]+?)\{\/h\}/;
+                const match = rule.exec(src);
+                if (match) {
+                    console.log(match);
+                    const token = {
+                        type: 'hidden',
+                        raw: match[0],
+                        text: match[1],
+                        tokens: this.lexer.inlineTokens(match[1]),
+                    };
+                    return token;
+                }
+            },
+            renderer(token) {
+                return `<span class="hidden-text">
+                    ${this.parser.parseInline(token.tokens)}
+                </span>`;
             },
         };
 
@@ -155,7 +212,12 @@
             };
             marked.use({
                 renderer,
-                extensions: [...calloutBlockExtensions, highlightInlineExtension],
+                extensions: [
+                    ...calloutBlockExtensions,
+                    highlightInlineExtension,
+                    coloredTextInlineExtension,
+                    hiddenTextInlineExtension,
+                ],
             });
         }
 

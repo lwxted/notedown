@@ -158,6 +158,14 @@ body {
 	color: #444
 }
 
+body .hidden-text {
+	color: #ddd;
+}
+
+body .hidden-text:hover {
+	color: #444;
+}
+
 body a:hover,
 body a:active {
 	color: #5af;
@@ -258,7 +266,7 @@ body ol {
 body ul p,
 body ol p {
 	margin: 6px 0;
-	font-size: 14.5px
+	font-size: 14.5px;
 }
 
 body ul li,
@@ -267,6 +275,7 @@ body ol li {
 	letter-spacing: 0.4px;
 	word-spacing: 1px;
 	margin: 6px 0;
+	line-height: 1.4;
 }
 
 body ol:has(> li > input) {
