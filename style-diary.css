@@ -1,156 +1,66 @@
-body {
+.style_diary {
 	margin: 100px auto 50px auto;
-	width: 650px;
+	width: 675px
 }
 
-body .mjx-chtml {
-	font-size: 112.5% !important
-}
-
-body .mjx-chtml .mjx-chtml {
-	font-size: inherit !important
-}
-
-body div.title div.back {
-	position: absolute;
-	top: -17.5px;
-	left: 0
-}
-
-body div.title div.edit {
-	position: absolute;
-	top: -17.5px;
-	right: 0
-}
-
-.clearfix:before,
-.clearfix:after {
-	content: "";
-	display: table
-}
-
-.clearfix:after {
-	clear: both
-}
-
-.clearfix {
-	zoom: 1
-}
-
-body div.title {
-	margin-left: 25px;
+.style_diary div.title {
 	position: relative
 }
 
-body .content {
-	margin-left: 27px;
-	padding-left: 32.5px;
-	margin-top: 25px;
+.style_diary section.month {
+	margin-top: 30px;
+	margin-bottom: 50px
+}
+
+.style_diary section.month div.month-title {
+	margin-top: 35px;
+	margin-bottom: 20px
+}
+
+.style_diary section.month div.month-title h1 {
+	font-size: 28px;
+	letter-spacing: 4px;
+	color: #333
+}
+
+.style_diary section.month div.days {
+	margin-left: 60px;
+	padding-left: 40px;
 	padding-bottom: 30px;
-	border-left: 2px solid #e8e8e8
+	border-left: 4px solid #e8e8e8
 }
 
-@media (max-width: 1023px) {
-	body {
-		max-width: 92vw;
-		padding-left: 10px;
-		padding-right: 5px
-	}
-
-	body section.days {
-		padding-left: 0px;
-		border-left: none
-	}
+.style_diary section.month div.days div.day {
+	position: relative;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	border-bottom: 1px solid #e8e8e8
 }
 
-@media (max-width: 1279px) and (min-width: 1024px) {
-	body {
-		padding-left: 200px
-	}
+.style_diary section.month div.days div.day div.circle {
+	width: 8px;
+	height: 8px;
+	border: 4px solid #e8e8e8;
+	border-radius: 8px;
+	position: absolute;
+	left: -50px;
+	top: 42px;
+	background-color: #fff
 }
 
-body div.toc {
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	position: fixed;
-	width: 250px;
-	right: 75vw;
-	top: 125px;
-	padding-left: 15px;
-	border-left: 2px solid #eee;
-	overflow-y: scroll;
-	max-height: 70vh;
-	line-height: 1.0;
-	color: #888
-}
-
-body div.toc a {
-	font-size: 12px;
-	color: #888
-}
-
-body div.toc ul {
-	list-style-type: none;
+.style_diary section.month div.days div.day span.day-counter {
+	color: #333;
+	font-size: 22px;
 	font-weight: 600;
-	letter-spacing: 0.75px;
-	margin: 8px 0 8px 8px;
-	padding: 0
-}
-
-body div.toc ul li {
-	margin: 2px 0;
-	padding: 0
-}
-
-body div.toc ul li a:link,
-body div.toc ul li a:visited,
-body div.toc ul li a:hover,
-body div.toc ul li a:active {
-	text-decoration: none
-}
-
-body div.toc ul li a:hover {
-	color: #444
-}
-
-body div.toc ul li a:hover span.toc-counter {
-	color: #444
-}
-
-body div.toc ul li a:hover span.toc-counter:hover {
-	color: #fff
-}
-
-body div.toc ul li span.toc-counter {
-	color: #888;
-	margin-right: 5px;
-	padding-right: 2px;
-	font-size: 11.5px
-}
-
-body div.toc ul li span.toc-counter:hover {
-	color: #fff
-}
-
-body div.toc>ul {
-	margin: 0 0 0 8px
-}
-
-body div.toc>ul>li {
-	margin: 5px 0
-}
-
-@media (max-width: 1279px) {
-	body div.toc {
-		right: 70vw
-	}
-}
-
-@media (max-width: 1023px) {
-	body div.toc {
-		display: none
-	}
+	margin: 0 0 0 0;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	color: #555;
+	position: absolute;
+	left: -115px;
+	top: 35px;
+	width: 40px;
+	text-align: right
 }
 
 body {
@@ -252,7 +162,7 @@ body ul,
 body ol {
 	font-size: 14.5px;
 	padding: 0;
-	margin: 5px 0px 10px 16px;
+	margin: 5px 0px 5px 16px;
 }
 
 body ul p,
@@ -267,26 +177,6 @@ body ol li {
 	letter-spacing: 0.4px;
 	word-spacing: 1px;
 	margin: 6px 0;
-}
-
-body ol:has(> li > input) {
-	margin: 5px 0px 10px -7px;
-}
-
-body ol li:has(input) {
-	list-style-type: none;
-}
-
-body ul:has(> li > input) {
-	margin: 5px 0px 10px -7px;
-}
-
-body ul li:has(input) {
-	list-style-type: none;
-}
-
-body ul > li > input {
-	vertical-align: bottom;
 }
 
 body div.title {
@@ -944,7 +834,8 @@ tr td {
 	font-size: 14.5px;
 }
 
-tr td pre, tr td code {
+tr td pre,
+tr td code {
 	font-size: 12.5px;
 	word-wrap: break-word;
 }
