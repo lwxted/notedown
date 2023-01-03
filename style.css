@@ -74,7 +74,7 @@ body div.toc {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	position: fixed;
-	width: 250px;
+	width: 275px;
 	right: 75vw;
 	top: 125px;
 	padding-left: 15px;
@@ -82,7 +82,7 @@ body div.toc {
 	overflow-y: scroll;
 	max-height: 70vh;
 	line-height: 1.0;
-	color: #888
+	color: #888;
 }
 
 body div.toc a {
@@ -94,13 +94,14 @@ body div.toc ul {
 	list-style-type: none;
 	font-weight: 600;
 	letter-spacing: 0.75px;
-	margin: 8px 0 8px 8px;
-	padding: 0
+	margin: 4px 0 4px 8px;
+	padding: 0;
 }
 
 body div.toc ul li {
 	margin: 2px 0;
-	padding: 0
+	padding: 0;
+	line-height: 1.2;
 }
 
 body div.toc ul li a:link,
@@ -134,11 +135,11 @@ body div.toc ul li span.toc-counter:hover {
 }
 
 body div.toc>ul {
-	margin: 0 0 0 8px
+	margin: 0 0 0 8px;
 }
 
 body div.toc>ul>li {
-	margin: 5px 0
+	margin: 4px 0;
 }
 
 @media (max-width: 1279px) {
@@ -159,11 +160,11 @@ body {
 }
 
 body .hidden-text {
-	color: #ddd;
+	opacity: 0.25;
 }
 
 body .hidden-text:hover {
-	color: #444;
+	opacity: 1;
 }
 
 body a:hover,

@@ -50,7 +50,6 @@
                 const rule = /^(==+)([^=]|[^=][\s\S]*?[^=])\1(?!=)/;
                 const match = rule.exec(src);
                 if (match) {
-                    console.log(match);
                     const token = {
                         type: 'highlight',
                         raw: match[0],
@@ -72,11 +71,9 @@
                 return src.match(/\{c\:(\S+)\}/)?.index;
             },
             tokenizer(src) {
-                console.log(src);
                 const rule = /^\{c\:(\S+)\}([\s\S]+?)\{\/c\}/;
                 const match = rule.exec(src);
                 if (match) {
-                    console.log(match);
                     const token = {
                         type: 'color',
                         raw: match[0],
@@ -101,11 +98,9 @@
                 return src.match(/\{h\}/)?.index;
             },
             tokenizer(src) {
-                console.log(src);
                 const rule = /^\{h\}([\s\S]+?)\{\/h\}/;
                 const match = rule.exec(src);
                 if (match) {
-                    console.log(match);
                     const token = {
                         type: 'hidden',
                         raw: match[0],
@@ -173,6 +168,83 @@
             calloutBlockExtensionFactory("warn", "warn"),
         ];
 
+        const _renderTocRecur = function(headers, index) {
+            const level = headers[index].level;
+            let pointer = index;
+            const itemList = [];
+            
+            let abort = false;
+            while (pointer < headers.length) {
+                for (; pointer < headers.length; ++pointer) {
+                    const inspectedLevel = headers[pointer].level;
+                    if (inspectedLevel < level) {
+                        abort = true;
+                        break;
+                    }
+                    if (inspectedLevel === level) {
+                        console.log(headers[pointer]);
+                        itemList.push(
+                            `<li>
+                                <a href="#${headers[pointer].href}">
+                                    <span class="toc-counter counter">${headers[pointer].counter.trim()}</span>
+                                    <span>${headers[pointer].title}</span>
+                                </a>
+                            </li>`
+                        );
+                        continue;
+                    }
+                    // inspectedLevel > level
+                    const recurResult = _renderTocRecur(headers, pointer);
+                    pointer = recurResult.nextIndex;
+                    itemList.push(recurResult.content);
+                    break;
+                }
+                if (abort) {
+                    break;
+                }
+            }
+
+            return {
+                content: `<ul>${itemList.join('\n')}</ul>`,
+                nextIndex: pointer,
+            };
+        };
+
+        const _renderToc = function(headers) {
+            const itemList = [];
+            let pointer = 0;
+            while (pointer < headers.length) {
+                const result = _renderTocRecur(headers, pointer);
+                itemList.push(result.content);
+                pointer = result.nextIndex;
+            }
+            return `<div class="toc">${itemList.join('\n')}</div>`;
+        }
+
+        const tocBlockExtension = {
+            name: 'toc',
+            level: 'block',
+            start(src) {
+                return src.match(/\{toc\}/)?.index;
+            },
+            tokenizer(src, _tokens) {
+                const rule = /^\{toc\}(?:\n\n*|$)/;
+                const match = rule.exec(src);
+                if (match) {
+                    const token = {
+                        type: 'toc',
+                        raw: match[0],
+                    }
+                    return token;
+                }
+            },
+            renderer(token) {
+                return _renderToc(headerMap);
+            }
+        }
+
+        const headerMap = [];
+
         const extendMarked = function () {
             const headerCounters = [0, 0, 0, 0, 0, 0];
 
@@ -187,13 +259,22 @@
             };
 
             const renderer = {
-                heading(text, level) {
-                    const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+                heading(text, level, _raw, slugger) {
+                    const escapedText = slugger.slug(text);
                     ++headerCounters[level - 1];
                     for (let i = level; i < 6; ++i) {
                         headerCounters[i] = 0;
                     }
-                    const counter = `<span class="section-counter counter">${renderHeaderLevelCounter(headerCounters)}</span>`;
+                    const counterText = renderHeaderLevelCounter(headerCounters);
+                    const counter = `<span class="section-counter counter">${counterText}</span>`;
+                    headerMap.push(
+                        {
+                            counter: counterText,
+                            href: escapedText,
+                            title: text,
+                            level: level,
+                        },
+                    );
                     return `
                           <h${level}>
                             <a name="${escapedText}" href="#${escapedText}">${counter}</a>
@@ -217,6 +298,7 @@
                     highlightInlineExtension,
                     coloredTextInlineExtension,
                     hiddenTextInlineExtension,
+                    tocBlockExtension,
                 ],
             });
         }
