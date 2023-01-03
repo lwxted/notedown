@@ -182,7 +182,6 @@
                         break;
                     }
                     if (inspectedLevel === level) {
-                        console.log(headers[pointer]);
                         itemList.push(
                             `<li>
                                 <a href="#${headers[pointer].href}">
@@ -301,7 +300,16 @@
                     tocBlockExtension,
                 ],
             });
-        }
+        };
+
+        const redirectToId = function () {
+            const url = window.location.href;
+            const loc = url.lastIndexOf('#')
+            console.log(url, url.substring(loc + 1));
+            if (loc !== -1) {
+                window.location.href = '#' + url.substring(loc + 1);
+            }
+        };
 
         const main = function () {
             loadCss(notedown_root + 'style.css');
@@ -310,6 +318,7 @@
                 marked = window.marked;
                 extendMarked();
                 renderPage();
+                redirectToId();
             });
 
             window.MathJax = {
@@ -331,6 +340,7 @@
             loadjs(mathjax_path, function () {
                 window.MathJax.typesetPromise();
             });
+
         }
 
         if (window.IMPORT_GUARD) {
