@@ -63,784 +63,133 @@
 	text-align: right
 }
 
-body {
-	font-family: "Source Sans Pro", "Helvetica", "STHeiti", "华文细黑", sans-serif;
-	color: #444
+.style_diary div.calendar:hover>ul>li {
+    color: #444
 }
 
-body a:hover,
-body a:active {
-	color: #5af;
-	text-decoration: none
+.style_diary div.calendar:hover>ul>li a {
+    color: #444
 }
 
-body a,
-body a:visited {
-	color: #38d;
-	text-decoration: none
+.style_diary div.calendar:hover>ul>li>ul {
+    max-height: 55vh;
+    opacity: 1;
+    -webkit-transition: opacity 0.25s 0.25s, max-height 0.25s, margin 0.25s;
+    -moz-transition: opacity 0.25s 0.25s, max-height 0.25s, margin 0.25s;
+    -ms-transition: opacity 0.25s 0.25s, max-height 0.25s, margin 0.25s;
+    -o-transition: opacity 0.25s 0.25s, max-height 0.25s, margin 0.25s;
+    transition: opacity 0.25s 0.25s, max-height 0.25s, margin 0.25s;
+    margin: 3px 0 12px 0
 }
 
-body a.counter-anchor {
-	text-decoration: none
+.style_diary div.calendar:hover>ul>li>ul>li {
+    color: #888
 }
 
-body span.counter {
-	padding-left: 2px;
-	padding-right: 0px;
-	margin-left: -2px;
-	color: #444;
-	cursor: pointer;
-	font-weight: 600;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none
+.style_diary div.calendar:hover>ul>li>ul>li a {
+    color: #888
 }
 
-body span.image-counter {
-	font-weight: 700;
-	color: #444
+.style_diary div.calendar:hover>ul>li>ul>li:hover {
+    color: #444
 }
 
-body span.counter:hover {
-	background-color: #444;
-	color: #fff
+.style_diary div.calendar:hover>ul>li>ul>li:hover a {
+    color: #444
 }
 
-body code {
-	font-family: "Menlo", monospace;
-	font-size: 13px;
-	word-spacing: 0;
-	letter-spacing: 0
+.style_diary div.calendar:hover>ul>li>ul>li.important:hover a {
+    color: #b40000
 }
 
-body pre {
-	margin: 15px 0 15px 0;
-	overflow: auto;
-	line-height: 1.3;
-	border-radius: 3px;
-	border: 1px solid #eee;
-	background-color: #fafafa;
-	padding: 15px 20px 15px 15px;
+.style_diary div.calendar {
+    position: fixed;
+    width: 150px;
+    right: 80vw;
+    top: 110px;
+    padding-right: 20px;
+    border-right: 2px solid #eee;
+    text-align: right;
+    overflow-y: scroll;
+    max-height: 70vh
 }
 
-body pre code {
-	font-size: 12px
+.style_diary div.calendar ul {
+    list-style-type: none;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 0
 }
 
-body pre code mjx-container {
-	font-size: 11.5px
+.style_diary div.calendar ul li {
+    padding: 0
 }
 
-body b {
-	font-weight: 600
+.style_diary div.calendar ul li a:link,
+.style_diary div.calendar ul li a:visited,
+.style_diary div.calendar ul li a:hover,
+.style_diary div.calendar ul li a:active {
+    text-decoration: none
 }
 
-body strong {
-	font-weight: 600
+.style_diary div.calendar>ul {
+    margin: 3px 0
 }
 
-body p {
-	font-size: 15px;
-	line-height: 1.4;
-	font-weight: 400;
-	margin: 15px 0 15px 0;
-	letter-spacing: 0.4px;
-	word-spacing: 1.5px;
+.style_diary div.calendar>ul>li {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #aaa;
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -ms-transition: color 0.5s;
+    -o-transition: color 0.5s;
+    transition: color 0.5s
 }
 
-body p mjx-container {
-	font-size: 14px
+.style_diary div.calendar>ul>li a {
+    color: #aaa
 }
 
-body p code {
-	margin-right: 2px;
-	word-spacing: -1px
+.style_diary div.calendar>ul>li>ul {
+    -webkit-transition: opacity 0.25s, max-height 0.25s 0.25s, margin 0.25s 0.25s;
+    -moz-transition: opacity 0.25s, max-height 0.25s 0.25s, margin 0.25s 0.25s;
+    -ms-transition: opacity 0.25s, max-height 0.25s 0.25s, margin 0.25s 0.25s;
+    -o-transition: opacity 0.25s, max-height 0.25s 0.25s, margin 0.25s 0.25s;
+    transition: opacity 0.25s, max-height 0.25s 0.25s, margin 0.25s 0.25s;
+    margin: 3px 0;
+    opacity: 0;
+    max-height: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end
 }
 
-body ul,
-body ol {
-	font-size: 14.5px;
-	padding: 0;
-	margin: 5px 0px 5px 16px;
+.style_diary div.calendar>ul>li>ul>li {
+    display: inline-block;
+    font-size: 13px;
+    color: #888;
+    margin-left: 6px;
+    min-width: 20px;
+    line-height: 1.375
 }
 
-body ul p,
-body ol p {
-	margin: 6px 0;
-	font-size: 14.5px
+.style_diary div.calendar>ul>li>ul>li a {
+    color: #888
 }
 
-body ul li,
-body ol li {
-	padding-left: 4px;
-	letter-spacing: 0.4px;
-	word-spacing: 1px;
-	margin: 6px 0;
-}
-
-body div.title {
-	color: #333;
-	font-size: 30px;
-	font-weight: 600;
-	margin: 30px 0 20px 0;
-	letter-spacing: 2.5px;
-	word-spacing: 4.5px;
-}
-
-body div.title span.section-counter {
-	font-size: 29px;
-	vertical-align: 0.5px;
-	margin-right: 12px
-}
-
-body div.title mjx-container {
-	font-size: 29px
-}
-
-body div.title code {
-	font-family: 'Menlo', monospace;
-	font-size: 28px;
-	margin-left: 1px;
-	margin-right: 1px;
-	letter-spacing: 1px;
-	word-spacing: -2px
-}
-
-body h1 {
-	color: #333;
-	font-size: 20px;
-	font-weight: 600;
-	margin: 30px 0 20px 0;
-	letter-spacing: 1px;
-	word-spacing: 2px;
-	letter-spacing: 1.5px;
-	word-spacing: 4px
-}
-
-body h1 span.section-counter {
-	font-size: 19px;
-	vertical-align: 0.5px;
-	margin-right: 12px
-}
-
-body h1 mjx-container {
-	font-size: 19px
-}
-
-body h1 code {
-	font-family: 'Menlo', monospace;
-	font-size: 18px;
-	margin-left: 1px;
-	margin-right: 1px;
-	letter-spacing: 1px;
-	word-spacing: -2px
-}
-
-body h2 {
-	color: #333;
-	font-size: 18px;
-	font-weight: 600;
-	margin: 25px 0 15px 0;
-	letter-spacing: 1px;
-	word-spacing: 2px;
-	word-spacing: 4px
-}
-
-body h2 span.section-counter {
-	font-size: 17px;
-	vertical-align: 0.5px;
-	margin-right: 12px
-}
-
-body h2 mjx-container {
-	font-size: 17px
-}
-
-body h2 code {
-	font-family: 'Menlo', monospace;
-	font-size: 16px;
-	margin-left: 1px;
-	margin-right: 1px;
-	letter-spacing: 1px;
-	word-spacing: -2px
-}
-
-body h3 {
-	color: #333;
-	font-size: 17px;
-	font-weight: 600;
-	margin: 25px 0 12px 0;
-	letter-spacing: 1px;
-	word-spacing: 2px;
-	letter-spacing: 1px
-}
-
-body h3 span.section-counter {
-	font-size: 16px;
-	vertical-align: 0.5px;
-	margin-right: 12px
-}
-
-body h3 mjx-container {
-	font-size: 16px
-}
-
-body h3 code {
-	font-family: 'Menlo', monospace;
-	font-size: 15px;
-	margin-left: 1px;
-	margin-right: 1px;
-	letter-spacing: 1px;
-	word-spacing: -2px
-}
-
-body h4 {
-	color: #333;
-	font-size: 16px;
-	font-weight: 600;
-	margin: 25px 0 12px 0;
-	letter-spacing: 1px;
-	word-spacing: 2px;
-	letter-spacing: 1px
-}
-
-body h4 span.section-counter {
-	font-size: 15px;
-	vertical-align: 0.5px;
-	margin-right: 12px
-}
-
-body h4 mjx-container {
-	font-size: 15px
-}
-
-body h4 code {
-	font-family: 'Menlo', monospace;
-	font-size: 14px;
-	margin-left: 1px;
-	margin-right: 1px;
-	letter-spacing: 1px;
-	word-spacing: -2px
-}
-
-body h5 {
-	color: #333;
-	font-size: 15px;
-	font-weight: 600;
-	margin: 25px 0 10px 0;
-	letter-spacing: 1px;
-	word-spacing: 2px;
-	letter-spacing: 1px
-}
-
-body h5 span.section-counter {
-	font-size: 14px;
-	vertical-align: 0.5px;
-	margin-right: 12px
-}
-
-body h5 mjx-container {
-	font-size: 14px
-}
-
-body h5 code {
-	font-family: 'Menlo', monospace;
-	font-size: 13px;
-	margin-left: 1px;
-	margin-right: 1px;
-	letter-spacing: 1px;
-	word-spacing: -2px
-}
-
-body h6 {
-	color: #333;
-	font-size: 15px;
-	font-weight: 600;
-	margin: 25px 0 10px 0;
-	letter-spacing: 1px;
-	word-spacing: 2px;
-	letter-spacing: 1px
-}
-
-body h6 span.section-counter {
-	font-size: 14px;
-	vertical-align: 0.5px;
-	margin-right: 12px
-}
-
-body h6 mjx-container {
-	font-size: 14px
-}
-
-body h6 code {
-	font-family: 'Menlo', monospace;
-	font-size: 13px;
-	margin-left: 1px;
-	margin-right: 1px;
-	letter-spacing: 1px;
-	word-spacing: -2px
-}
-
-body div.figure {
-	margin-bottom: 25px;
-	margin-top: 25px
-}
-
-body div.figure>div.img {
-	max-width: 100%
-}
-
-body div.figure>div.img>img {
-	display: block;
-	max-width: 100%
-}
-
-body div.figure>div.caption {
-	color: #666;
-	font-size: 12px;
-	letter-spacing: 0.5px;
-	word-spacing: 2px;
-	margin-top: 10px
-}
-
-body div.figure>div.caption mjx-container {
-	font-size: 12px
-}
-
-body div.figure>div.caption code {
-	font-size: 11px;
-	word-spacing: 0;
-	letter-spacing: 0
-}
-
-body div.figure>div.caption>div.image-counter-block {
-	margin-bottom: 5px
-}
-
-body div.figure>div.caption>div.image-counter-block>span.image-counter {
-	text-transform: uppercase;
-	letter-spacing: 1.5px;
-	font-size: 13px
-}
-
-@media (max-width: 1023px) {
-	body div.figure {
-		max-width: 100%
-	}
+.style_diary div.calendar>ul>li>ul>li.important a {
+    color: rgba(180, 0, 0, 0.6)
 }
 
 @media (max-width: 1279px) {
-	body div.figure>div.caption>div.image-counter-block {
-		margin-top: 15px
-	}
-
-	body div.figure>div.img {
-		max-width: 100%
-	}
-}
-
-@media (min-width: 1280px) {
-	body div.figure {
-		width: 842.5px
-	}
-
-	body div.figure>div.img {
-		width: 552.5px;
-		margin-right: 40px;
-		float: none;
-	}
-
-	body div.figure>div.caption {
-		width: 250px;
-		float: none;
-	}
-}
-
-body div.definition {
-	border-radius: 3px;
-	border: 1px solid #eee;
-	background-color: #fafafa;
-	margin: 15px 0 15px 0;
-	padding: 2.5px 20px 2.5px 15px;
-	padding-left: 20px;
-	padding-right: 20px
-}
-
-body div.definition>div.title {
-	color: #333;
-	font-size: 15px;
-	font-weight: 600;
-	margin: 15px 0 12px 0;
-	letter-spacing: 1px;
-	word-spacing: 2px;
-	letter-spacing: 0.5px;
-	color: #444
-}
-
-body div.definition>div.title span.section-counter {
-	font-size: 14px;
-	vertical-align: 0.5px;
-	margin-right: 12px
-}
-
-body div.definition>div.title mjx-container {
-	font-size: 14px
-}
-
-body div.definition>div.title code {
-	font-family: 'Menlo', monospace;
-	font-size: 13px;
-	margin-left: 1px;
-	margin-right: 1px;
-	letter-spacing: 1px;
-	word-spacing: -2px
-}
-
-body div.definition>div.explanation {
-	font-size: 14.5px;
-	color: #444;
-	margin: 10px 0 15px 0
-}
-
-body div.definition>div.explanation p {
-	font-size: 14.5px;
-	margin: 10px 0
-}
-
-body div.definition>div.explanation hr {
-	margin: 15px 0
-}
-
-body div.definition>div.explanation ol p,
-body div.definition>div.explanation ul p {
-	margin: 8px 0
-}
-
-body div.definition>div.explanation mjx-container {
-	font-size: 13.5px
-}
-
-body div.definition>div.explanation div.figure {
-	max-width: 100%;
-	margin-top: 20px;
-	margin-bottom: 20px
-}
-
-body div.definition>div.explanation div.figure>div.img {
-	float: none
-}
-
-body div.definition>div.explanation div.figure>div.caption {
-	width: auto;
-	max-width: 100%;
-	float: none
-}
-
-body blockquote {
-	border-left: 5px solid #ccc;
-	background-color: #f6f6f6;
-	margin: 15px 0 15px 0;
-	padding: 2.5px 20px 2.5px 15px;
-}
-
-body div.note {
-	border-left: 5px solid #e6d0a1;
-	background-color: #fcf8e3;
-	margin: 15px 0 15px 0;
-	padding: 2.5px 20px 2.5px 15px
-}
-
-body div.note>div.title {
-	color: #333;
-	font-size: 15px;
-	font-weight: 600;
-	margin: 15px 0 12px 0;
-	letter-spacing: 1px;
-	word-spacing: 2px;
-	letter-spacing: 0.5px;
-	color: #66512c
-}
-
-body div.note>div.title span.section-counter {
-	font-size: 14px;
-	vertical-align: 0.5px;
-	margin-right: 12px
-}
-
-body div.note>div.title mjx-container {
-	font-size: 14px
-}
-
-body div.note>div.title code {
-	font-family: 'Menlo', monospace;
-	font-size: 13px;
-	margin-left: 1px;
-	margin-right: 1px;
-	letter-spacing: 1px;
-	word-spacing: -2px
-}
-
-body div.note>div.explanation {
-	font-size: 14.5px;
-	color: #8a6d3b;
-	margin: 10px 0 15px 0
-}
-
-body div.note>div.explanation p {
-	font-size: 14.5px;
-	margin: 10px 0
-}
-
-body div.note>div.explanation hr {
-	margin: 15px 0
-}
-
-body div.note>div.explanation ol p,
-body div.note>div.explanation ul p {
-	margin: 8px 0
-}
-
-body div.note>div.explanation mjx-container {
-	font-size: 13.5px
-}
-
-body div.note>div.explanation div.figure {
-	max-width: 100%;
-	margin-top: 20px;
-	margin-bottom: 20px
-}
-
-body div.note>div.explanation div.figure>div.img {
-	float: none
-}
-
-body div.note>div.explanation div.figure>div.caption {
-	width: auto;
-	max-width: 100%;
-	float: none
-}
-
-body div.warn {
-	border-left: 5px solid #d2a8af;
-	background-color: #f2dede;
-	margin: 15px 0 15px 0;
-	padding: 2.5px 20px 2.5px 15px
-}
-
-body div.warn>div.title {
-	color: #333;
-	font-size: 15px;
-	font-weight: 600;
-	margin: 15px 0 12px 0;
-	letter-spacing: 1px;
-	word-spacing: 2px;
-	letter-spacing: 0.5px;
-	color: #843534
-}
-
-body div.warn>div.title span.section-counter {
-	font-size: 14px;
-	vertical-align: 0.5px;
-	margin-right: 12px
-}
-
-body div.warn>div.title mjx-container {
-	font-size: 14px
-}
-
-body div.warn>div.title code {
-	font-family: 'Menlo', monospace;
-	font-size: 13px;
-	margin-left: 1px;
-	margin-right: 1px;
-	letter-spacing: 1px;
-	word-spacing: -2px
-}
-
-body div.warn>div.explanation {
-	font-size: 14.5px;
-	color: #843534;
-	margin: 10px 0 15px 0
-}
-
-body div.warn>div.explanation p {
-	font-size: 14.5px;
-	margin: 10px 0
-}
-
-body div.warn>div.explanation hr {
-	margin: 15px 0
-}
-
-body div.warn>div.explanation ol p,
-body div.warn>div.explanation ul p {
-	margin: 8px 0
-}
-
-body div.warn>div.explanation mjx-container {
-	font-size: 13.5px
-}
-
-body div.warn>div.explanation div.figure {
-	max-width: 100%;
-	margin-top: 20px;
-	margin-bottom: 20px
-}
-
-body div.warn>div.explanation div.figure>div.img {
-	float: none
-}
-
-body div.warn>div.explanation div.figure>div.caption {
-	width: auto;
-	max-width: 100%;
-	float: none
-}
-
-body div.emph {
-	color: #333;
-	font-size: 16px;
-	font-weight: 600;
-	margin: 22.5px 0 10px 0;
-	letter-spacing: 1px;
-	word-spacing: 2px;
-	letter-spacing: 0.75px;
-	line-height: 1.4
-}
-
-body div.emph span.section-counter {
-	font-size: 15px;
-	vertical-align: 0.5px;
-	margin-right: 12px
-}
-
-body div.emph mjx-container {
-	font-size: 15px
-}
-
-body div.emph code {
-	font-family: 'Menlo', monospace;
-	font-size: 14px;
-	margin-left: 1px;
-	margin-right: 1px;
-	letter-spacing: 1px;
-	word-spacing: -2px
-}
-
-body div.center {
-	text-align: center;
-	margin: 18px auto 18px auto;
-}
-
-body hr {
-	display: block;
-	height: 1px;
-	border: 0;
-	border-top: 1px dashed #ddd;
-	margin: 25px 0 25px 0;
-	padding: 0
-}
-
-body ul.checklist {
-	list-style-type: none;
-	letter-spacing: 0.3px;
-	word-spacing: 2px
-}
-
-body ul.checklist>li.checklist_item {
-	margin-top: 8px;
-	margin-bottom: 8px
-}
-
-body ul.checklist>li.checklist_item>input[type="checkbox"] {
-	margin-left: -22px;
-	vertical-align: top;
-	margin-top: 4px
-}
-
-body ul.checklist>li.checklist_item>input[type="checkbox"]:checked~* {
-	text-decoration: line-through
-}
-
-body ul.checklist>li.checklist_item>label {
-	margin-left: 8px;
-	line-height: 1.4;
-	display: inline-block;
-}
-
-body ul.checklist>li.checklist_item>div.checklist_details {
-	margin-left: 3px
-}
-
-table {
-	border: 1px solid #ddd;
-	border-collapse: separate;
-	border-left: 0;
-	border-radius: 2px;
-	border-spacing: 0px;
-	margin: 15px 0;
-	max-width: 100%;
-	table-layout: fixed;
-	overflow: scroll;
-	display: inline-block;
-}
-
-thead {
-	display: table-header-group;
-	vertical-align: middle;
-	border-color: inherit;
-	border-collapse: separate;
-}
-
-tr {
-	display: table-row;
-	vertical-align: inherit;
-	border-color: inherit;
-}
-
-td {
-	border-top: 1px solid #ddd;
-}
-
-thead:first-child tr:first-child th:first-child,
-tbody:first-child tr:first-child td:first-child {
-	border-radius: 2px 0 0 0;
-}
-
-thead:last-child tr:last-child th:first-child,
-tbody:last-child tr:last-child td:first-child {
-	border-radius: 0 0 0 2px;
-}
-
-th,
-td {
-	vertical-align: top;
-	border-left: 1px solid #ddd;
-}
-
-tr th {
-	font-weight: 600;
-	letter-spacing: 0.6px;
-	word-spacing: 1.5px;
-	padding: 8px 10px;
-}
-
-tr td {
-	font-weight: 400;
-	letter-spacing: 0.3px;
-	word-spacing: 0.8px;
-	padding: 6px 10px;
-	font-size: 14.5px;
-}
-
-tr td pre,
-tr td code {
-	font-size: 12.5px;
-	word-wrap: break-word;
-}
-
-
-mark {
-	background-color: rgba(253, 215, 134, 0.5);
+    .style_diary div.calendar {
+        right: 77.5vw
+    }
+}
+
+@media (max-width: 1023px) {
+    .style_diary div.calendar {
+        display: none
+    }
 }
