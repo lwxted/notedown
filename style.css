@@ -264,6 +264,11 @@ body ol {
 	margin: 5px 0px 10px 16px;
 }
 
+table ul,
+table ol {
+	margin: 5px 0px 5px 16px;
+}
+
 body ul p,
 body ol p {
 	margin: 6px 0;
