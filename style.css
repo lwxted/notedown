@@ -899,6 +899,7 @@ table {
 	table-layout: fixed;
 	overflow: scroll;
 	display: inline-block;
+	line-height: 1.3;
 }
 
 thead {
