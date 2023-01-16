@@ -304,8 +304,7 @@
 
         const redirectToId = function () {
             const url = window.location.href;
-            const loc = url.lastIndexOf('#')
-            console.log(url, url.substring(loc + 1));
+            const loc = url.lastIndexOf('#');
             if (loc !== -1) {
                 window.location.href = '#' + url.substring(loc + 1);
             }

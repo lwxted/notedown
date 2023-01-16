@@ -279,24 +279,14 @@ body ol li {
 	line-height: 1.4;
 }
 
-body ol:has(> li > input) {
-	margin: 5px 0px 10px -7px;
-}
-
-body ol li:has(input) {
+body ol li:has(> input), body ul li:has(> input) {
 	list-style-type: none;
 }
 
-body ul:has(> li > input) {
-	margin: 5px 0px 10px -7px;
-}
-
-body ul li:has(input) {
-	list-style-type: none;
-}
-
-body ul > li > input {
+body ul > li > input, body ol > li > input {
 	vertical-align: bottom;
+	margin-left: -22px;
+	margin-right: 5px;
 }
 
 body div.title {
