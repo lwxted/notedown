@@ -168,11 +168,11 @@
             calloutBlockExtensionFactory("warn", "warn"),
         ];
 
-        const _renderTocRecur = function(headers, index) {
+        const _renderTocRecur = function (headers, index) {
             const level = headers[index].level;
             let pointer = index;
             const itemList = [];
-            
+
             let abort = false;
             while (pointer < headers.length) {
                 for (; pointer < headers.length; ++pointer) {
@@ -209,7 +209,7 @@
             };
         };
 
-        const _renderToc = function(headers) {
+        const _renderToc = function (headers) {
             const itemList = [];
             let pointer = 0;
             while (pointer < headers.length) {
@@ -317,7 +317,6 @@
                 marked = window.marked;
                 extendMarked();
                 renderPage();
-                redirectToId();
             });
 
             window.MathJax = {
@@ -340,6 +339,15 @@
                 window.MathJax.typesetPromise();
             });
 
+            window.onload = function () {
+                redirectToId();
+                for (const snippet of (window.__snippets || [])) {
+                    const [tag, content] = snippet;
+                    for (const node of document.querySelectorAll(`snippet[data-tag="${tag}"]`)) {
+                        node.innerHTML = marked.parse(content);
+                    }
+                }
+            };
         }
 
         if (window.IMPORT_GUARD) {
