@@ -118,11 +118,11 @@ body div.toc ul li a:active {
 }
 
 body div.toc ul li a:hover {
-	color: #444
+	color: #333
 }
 
 body div.toc ul li a:hover span.toc-counter {
-	color: #444
+	color: #333
 }
 
 body div.toc ul li a:hover span.toc-counter:hover {
@@ -156,7 +156,7 @@ body div.toc>ul>li {
 
 body {
 	font-family: "Source Sans Pro", "Helvetica", sans-serif;
-	color: #444
+	color: #333
 }
 
 body .hidden-text {
@@ -187,7 +187,7 @@ body span.counter {
 	padding-left: 2px;
 	padding-right: 0px;
 	margin-left: -2px;
-	color: #444;
+	color: #333;
 	cursor: pointer;
 	font-weight: 600;
 	-webkit-user-select: none;
@@ -198,11 +198,11 @@ body span.counter {
 
 body span.image-counter {
 	font-weight: 700;
-	color: #444
+	color: #333
 }
 
 body span.counter:hover {
-	background-color: #444;
+	background-color: #333;
 	color: #fff
 }
 
@@ -590,7 +590,7 @@ body div.definition>div.title {
 	letter-spacing: 1px;
 	word-spacing: 2px;
 	letter-spacing: 0.5px;
-	color: #444
+	color: #333
 }
 
 body div.definition>div.title span.section-counter {
@@ -614,7 +614,7 @@ body div.definition>div.title code {
 
 body div.definition>div.explanation {
 	font-size: 14.5px;
-	color: #444;
+	color: #333;
 	margin: 10px 0 15px 0
 }
 
