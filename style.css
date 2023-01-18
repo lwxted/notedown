@@ -241,7 +241,7 @@ body strong {
 
 body p {
 	font-size: 15px;
-	line-height: 1.4;
+	line-height: 1.45;
 	font-weight: 400;
 	margin: 15px 0 15px 0;
 	letter-spacing: 0.4px;
@@ -281,7 +281,7 @@ body ol li {
 	letter-spacing: 0.4px;
 	word-spacing: 1px;
 	margin: 6px 0;
-	line-height: 1.4;
+	line-height: 1.45;
 }
 
 body ol li:has(> input), body ul li:has(> input) {
@@ -880,7 +880,7 @@ body ul.checklist>li.checklist_item>input[type="checkbox"]:checked~* {
 
 body ul.checklist>li.checklist_item>label {
 	margin-left: 8px;
-	line-height: 1.4;
+	line-height: 1.45;
 	display: inline-block;
 }
 
