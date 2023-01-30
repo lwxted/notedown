@@ -117,6 +117,30 @@
             },
         };
 
+        const mathInlineExtension = {
+            name: 'math',
+            level: 'inline',
+            start(src) {
+                return src.match(/\$/)?.index;
+            },
+            tokenizer(src) {
+                const rule = /^\$([\s\S]+?)\$/;
+                const match = rule.exec(src);
+                if (match) {
+                    console.log(match);
+                    const token = {
+                        type: 'math',
+                        raw: match[0],
+                        text: match[1],
+                    };
+                    return token;
+                }
+            },
+            renderer(token) {
+                return token.raw;
+            },
+        };
+
         const calloutBlockExtensionFactory = function (environmentName, renderedClass) {
             if (!['note', 'def', 'warn'].includes(environmentName)) {
                 throw new Error(`Environment ${environmentName} invalid`);
@@ -294,6 +318,7 @@
                 renderer,
                 extensions: [
                     ...calloutBlockExtensions,
+                    mathInlineExtension,
                     highlightInlineExtension,
                     coloredTextInlineExtension,
                     hiddenTextInlineExtension,
