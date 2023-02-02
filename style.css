@@ -243,7 +243,7 @@ body p {
 	font-size: 15px;
 	line-height: 1.45;
 	font-weight: 400;
-	margin: 15px 0 15px 0;
+	margin: 15px 0 8px 0;
 	letter-spacing: 0.4px;
 	word-spacing: 1.5px;
 }
@@ -261,12 +261,12 @@ body ul,
 body ol {
 	font-size: 14.5px;
 	padding: 0;
-	margin: 5px 0px 10px 16px;
+	margin: 5px 0px 10px 28px;
 }
 
 table ul,
 table ol {
-	margin: 5px 0px 5px 16px;
+	margin: 5px 0px 5px 20px;
 }
 
 body ul p,
