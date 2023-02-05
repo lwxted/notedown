@@ -184,7 +184,50 @@
                     `;
                 }
             }
-        }
+        };
+
+        let toggledBlockCount = 0;
+
+        const toggledBlockExtension = {
+            name: 'toggled',
+            level: 'block',
+            start(src) {
+                const regex = `\\{(?:tog)\\}\n`;
+                return src.match(new RegExp(regex))?.index;
+            },
+            tokenizer(src, _tokens) {
+                const regex = `^\\{(tog)(:[1-9]\\d*)?\\}\n(.*\n)([\\S\\s]*?)\\{\/(?:tog)\\2?\\}(?:\n\n*|$)`;
+                const rule = new RegExp(regex);
+                const match = rule.exec(src);
+                if (match) {
+                    const token = {
+                        type: 'toggled',
+                        raw: match[0],
+                        text: match[0].trim(),
+                        title: match[3].trim(),
+                        titleTokens: [],
+                        content: match[4].trim(),
+                        contentTokens: [],
+                    }
+                    this.lexer.inline(token.title, token.titleTokens);
+                    token.contentTokens.push(...this.lexer.blockTokens(token.content));
+                    return token;
+                }
+            },
+            renderer(token) {
+                toggledBlockCount++;
+                return `<div class="toggled-block">
+                            <label class="prompt" for="toggled-${toggledBlockCount}">
+                                ${this.parser.parseInline(token.titleTokens)}
+                            </label>
+                            <input type="checkbox" id="toggled-${toggledBlockCount}">
+                            <div class="toggled-content">
+                                ${this.parser.parse(token.contentTokens)}
+                            </div>
+                        </div>
+                `;
+            }
+        };
 
         const calloutBlockExtensions = [
             calloutBlockExtensionFactory("def", "definition"),
@@ -322,6 +365,7 @@
                     highlightInlineExtension,
                     coloredTextInlineExtension,
                     hiddenTextInlineExtension,
+                    toggledBlockExtension,
                     tocBlockExtension,
                 ],
             });

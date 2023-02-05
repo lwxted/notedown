@@ -168,13 +168,16 @@ body .hidden-text:hover {
 }
 
 body a:hover,
-body a:active {
+body a:active,
+.toggled-block>label.prompt:hover,
+.toggled-block>label.prompt:active {
 	color: #5af;
 	text-decoration: none
 }
 
 body a,
-body a:visited {
+body a:visited,
+.toggled-block>label.prompt {
 	color: #38d;
 	text-decoration: none
 }
@@ -248,6 +251,10 @@ body p {
 	word-spacing: 1.5px;
 }
 
+p:last-of-type {
+	margin-bottom: 15px;
+}
+
 body p mjx-container {
 	font-size: 14px
 }
@@ -284,11 +291,13 @@ body ol li {
 	line-height: 1.45;
 }
 
-body ol li:has(> input), body ul li:has(> input) {
+body ol li:has(> input),
+body ul li:has(> input) {
 	list-style-type: none;
 }
 
-body ul > li > input, body ol > li > input {
+body ul>li>input,
+body ol>li>input {
 	vertical-align: bottom;
 	margin-left: -22px;
 	margin-right: 5px;
@@ -577,9 +586,7 @@ body div.definition {
 	border: 1px solid #eee;
 	background-color: #fafafa;
 	margin: 15px 0 15px 0;
-	padding: 2.5px 20px 2.5px 15px;
-	padding-left: 20px;
-	padding-right: 20px
+	padding: 2.5px 20px 2.5px 20px;
 }
 
 body div.definition>div.title {
@@ -951,16 +958,19 @@ tr td {
 	padding: 6px 10px;
 }
 
-tr td ul, tr td ol {
+tr td ul,
+tr td ol {
 	font-size: 14px;
 }
 
-tr td > ul:first-child, tr td > ol:first-child {
+tr td>ul:first-child,
+tr td>ol:first-child {
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
-table ul li, table ol li {
+table ul li,
+table ol li {
 	letter-spacing: 0.3px;
 	word-spacing: 0.8px;
 	margin-top: 0;
@@ -968,7 +978,8 @@ table ul li, table ol li {
 	line-height: 1.3;
 }
 
-tr td pre, tr td code {
+tr td pre,
+tr td code {
 	font-size: 12.5px;
 	word-wrap: break-word;
 }
@@ -977,4 +988,30 @@ tr td pre, tr td code {
 mark {
 	background-color: rgba(253, 215, 134, 0.5);
 	color: inherit;
+}
+
+.toggled-block>input[type=checkbox] {
+	display: none;
+}
+
+.toggled-block>input[type=checkbox]:not(:checked)+div {
+	display: none;
+}
+
+.toggled-block>label.prompt {
+	letter-spacing: 1px;
+	font-size: 15px;
+	word-spacing: 2px;
+	letter-spacing: 0.5px;
+	-webkit-appearance: push-button;
+	-moz-appearance: button;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.toggled-block>div.toggled-content {
+	margin: 15px 0;
+	padding: 2.5px 20px 2.5px 20px;
+	border-radius: 3px;
+	border: 1px solid #eee;
 }
