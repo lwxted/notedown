@@ -127,7 +127,6 @@
                 const rule = /^\$([\s\S]+?)\$/;
                 const match = rule.exec(src);
                 if (match) {
-                    console.log(match);
                     const token = {
                         type: 'math',
                         raw: match[0],
