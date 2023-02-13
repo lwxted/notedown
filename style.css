@@ -118,11 +118,11 @@ body div.toc ul li a:active {
 }
 
 body div.toc ul li a:hover {
-	color: #333
+	color: #2e2e2e
 }
 
 body div.toc ul li a:hover span.toc-counter {
-	color: #333
+	color: #2e2e2e
 }
 
 body div.toc ul li a:hover span.toc-counter:hover {
@@ -156,7 +156,7 @@ body div.toc>ul>li {
 
 body {
 	font-family: "Source Sans Pro", "Helvetica", sans-serif;
-	color: #333
+	color: #2e2e2e
 }
 
 body .hidden-text {
@@ -169,15 +169,15 @@ body .hidden-text:hover {
 
 body a:hover,
 body a:active,
-.toggled-block>label.prompt:hover,
-.toggled-block>label.prompt:active {
+.toggled-block label.prompt:hover,
+.toggled-block label.prompt:active {
 	color: #5af;
 	text-decoration: none
 }
 
 body a,
 body a:visited,
-.toggled-block>label.prompt {
+.toggled-block label.prompt {
 	color: #38d;
 	text-decoration: none
 }
@@ -190,7 +190,7 @@ body span.counter {
 	padding-left: 2px;
 	padding-right: 0px;
 	margin-left: -2px;
-	color: #333;
+	color: #2e2e2e;
 	cursor: pointer;
 	font-weight: 600;
 	-webkit-user-select: none;
@@ -201,11 +201,11 @@ body span.counter {
 
 body span.image-counter {
 	font-weight: 700;
-	color: #333
+	color: #2e2e2e
 }
 
 body span.counter:hover {
-	background-color: #333;
+	background-color: #2e2e2e;
 	color: #fff
 }
 
@@ -242,17 +242,13 @@ body strong {
 	font-weight: 600
 }
 
-body p {
+p {
 	font-size: 15px;
 	line-height: 1.45;
 	font-weight: 400;
 	margin: 15px 0 8px 0;
 	letter-spacing: 0.4px;
 	word-spacing: 1.5px;
-}
-
-p:last-of-type {
-	margin-bottom: 15px;
 }
 
 body p mjx-container {
@@ -273,7 +269,7 @@ body ol {
 
 body ul ul,
 body ul ol,
-body ol ul, 
+body ol ul,
 body ol ol {
 	margin-top: 5px;
 }
@@ -312,7 +308,7 @@ body ol>li>input {
 }
 
 body div.title {
-	color: #333;
+	color: #2e2e2e;
 	font-size: 30px;
 	font-weight: 600;
 	margin: 30px 0 20px 0;
@@ -340,7 +336,7 @@ body div.title code {
 }
 
 body h1 {
-	color: #333;
+	color: #2e2e2e;
 	font-size: 20px;
 	font-weight: 600;
 	margin: 30px 0 20px 0;
@@ -370,7 +366,7 @@ body h1 code {
 }
 
 body h2 {
-	color: #333;
+	color: #2e2e2e;
 	font-size: 18px;
 	font-weight: 600;
 	margin: 25px 0 15px 0;
@@ -399,7 +395,7 @@ body h2 code {
 }
 
 body h3 {
-	color: #333;
+	color: #2e2e2e;
 	font-size: 17px;
 	font-weight: 600;
 	margin: 25px 0 12px 0;
@@ -428,7 +424,7 @@ body h3 code {
 }
 
 body h4 {
-	color: #333;
+	color: #2e2e2e;
 	font-size: 16px;
 	font-weight: 600;
 	margin: 25px 0 12px 0;
@@ -457,7 +453,7 @@ body h4 code {
 }
 
 body h5 {
-	color: #333;
+	color: #2e2e2e;
 	font-size: 15px;
 	font-weight: 600;
 	margin: 25px 0 10px 0;
@@ -486,7 +482,7 @@ body h5 code {
 }
 
 body h6 {
-	color: #333;
+	color: #2e2e2e;
 	font-size: 15px;
 	font-weight: 600;
 	margin: 25px 0 10px 0;
@@ -598,14 +594,14 @@ body div.definition {
 }
 
 body div.definition>div.title {
-	color: #333;
+	color: #2e2e2e;
 	font-size: 15px;
 	font-weight: 600;
 	margin: 15px 0 12px 0;
 	letter-spacing: 1px;
 	word-spacing: 2px;
 	letter-spacing: 0.5px;
-	color: #333
+	color: #2e2e2e
 }
 
 body div.definition>div.title span.section-counter {
@@ -629,7 +625,7 @@ body div.definition>div.title code {
 
 body div.definition>div.explanation {
 	font-size: 14.5px;
-	color: #333;
+	color: #2e2e2e;
 	margin: 10px 0 15px 0
 }
 
@@ -682,7 +678,7 @@ body div.note {
 }
 
 body div.note>div.title {
-	color: #333;
+	color: #2e2e2e;
 	font-size: 15px;
 	font-weight: 600;
 	margin: 15px 0 12px 0;
@@ -759,7 +755,7 @@ body div.warn {
 }
 
 body div.warn>div.title {
-	color: #333;
+	color: #2e2e2e;
 	font-size: 15px;
 	font-weight: 600;
 	margin: 15px 0 12px 0;
@@ -829,7 +825,7 @@ body div.warn>div.explanation div.figure>div.caption {
 }
 
 body div.emph {
-	color: #333;
+	color: #2e2e2e;
 	font-size: 16px;
 	font-weight: 600;
 	margin: 22.5px 0 10px 0;
@@ -1002,24 +998,49 @@ mark {
 	display: none;
 }
 
-.toggled-block>input[type=checkbox]:not(:checked)+div {
+.toggled-block>input[type=checkbox]:not(:checked)~.toggled-content {
 	display: none;
 }
 
-.toggled-block>label.prompt {
+.toggled-block>.toggled-header {
+	background-color: #fafafa;
+	padding: 6px 14px;
+}
+
+.toggled-block>.toggled-content {
+	border-top: 1px solid #eee;
+	padding: 2.5px 14px;
+}
+
+.toggled-block>.toggled-content p:first-of-type {
+	margin-top: 8px;
+}
+
+.toggled-block label.prompt {
 	letter-spacing: 1px;
-	font-size: 15px;
+	font-size: 14px;
 	word-spacing: 2px;
 	letter-spacing: 0.5px;
 	-webkit-appearance: push-button;
 	-moz-appearance: button;
-	display: inline-block;
 	cursor: pointer;
+	float: right;
 }
 
-.toggled-block>div.toggled-content {
+.toggled-block>.toggled-content {
+	color: #444;
+}
+
+.toggled-block>.toggled-header>.toggled-title {
+	letter-spacing: 1px;
+	font-size: 15px;
+	word-spacing: 2px;
+	letter-spacing: 0.5px;
+	vertical-align: top;
+}
+
+.toggled-block {
 	margin: 15px 0;
-	padding: 2.5px 20px 2.5px 20px;
 	border-radius: 3px;
 	border: 1px solid #eee;
 }

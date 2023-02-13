@@ -216,10 +216,15 @@
             renderer(token) {
                 toggledBlockCount++;
                 return `<div class="toggled-block">
-                            <label class="prompt" for="toggled-${toggledBlockCount}">
-                                ${this.parser.parseInline(token.titleTokens)}
-                            </label>
                             <input type="checkbox" id="toggled-${toggledBlockCount}">
+                            <div class="clearfix toggled-header">
+                                <span class="toggled-title">
+                                    ${this.parser.parseInline(token.titleTokens)}
+                                </span>
+                                <label class="prompt" for="toggled-${toggledBlockCount}">
+                                    show
+                                </label>
+                            </div>
                             <div class="toggled-content">
                                 ${this.parser.parse(token.contentTokens)}
                             </div>
