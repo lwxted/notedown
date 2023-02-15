@@ -403,6 +403,9 @@
                     tags: 'ams',
                     processEscapes: true,
                 },
+                chtml: {
+                    scale: 0.95,
+                },
                 startup: {
                     typeset: false
                 }

@@ -230,9 +230,6 @@ body pre code {
 	font-size: 12px
 }
 
-body pre code mjx-container {
-	font-size: 11.5px
-}
 
 body b {
 	font-weight: 600
@@ -251,9 +248,6 @@ p {
 	word-spacing: 1.5px;
 }
 
-body p mjx-container {
-	font-size: 14px
-}
 
 body p code {
 	margin-right: 2px;
@@ -322,10 +316,6 @@ body div.title span.section-counter {
 	margin-right: 12px
 }
 
-body div.title mjx-container {
-	font-size: 29px
-}
-
 body div.title code {
 	font-family: 'Menlo', monospace;
 	font-size: 28px;
@@ -350,10 +340,6 @@ body h1 span.section-counter {
 	font-size: 19px;
 	vertical-align: 0.5px;
 	margin-right: 12px
-}
-
-body h1 mjx-container {
-	font-size: 19px
 }
 
 body h1 code {
@@ -381,10 +367,6 @@ body h2 span.section-counter {
 	margin-right: 12px
 }
 
-body h2 mjx-container {
-	font-size: 17px
-}
-
 body h2 code {
 	font-family: 'Menlo', monospace;
 	font-size: 16px;
@@ -408,10 +390,6 @@ body h3 span.section-counter {
 	font-size: 16px;
 	vertical-align: 0.5px;
 	margin-right: 12px
-}
-
-body h3 mjx-container {
-	font-size: 16px
 }
 
 body h3 code {
@@ -439,10 +417,6 @@ body h4 span.section-counter {
 	margin-right: 12px
 }
 
-body h4 mjx-container {
-	font-size: 15px
-}
-
 body h4 code {
 	font-family: 'Menlo', monospace;
 	font-size: 14px;
@@ -468,10 +442,6 @@ body h5 span.section-counter {
 	margin-right: 12px
 }
 
-body h5 mjx-container {
-	font-size: 14px
-}
-
 body h5 code {
 	font-family: 'Menlo', monospace;
 	font-size: 13px;
@@ -495,10 +465,6 @@ body h6 span.section-counter {
 	font-size: 14px;
 	vertical-align: 0.5px;
 	margin-right: 12px
-}
-
-body h6 mjx-container {
-	font-size: 14px
 }
 
 body h6 code {
@@ -530,10 +496,6 @@ body div.figure>div.caption {
 	letter-spacing: 0.5px;
 	word-spacing: 2px;
 	margin-top: 10px
-}
-
-body div.figure>div.caption mjx-container {
-	font-size: 12px
 }
 
 body div.figure>div.caption code {
@@ -610,10 +572,6 @@ body div.definition>div.title span.section-counter {
 	margin-right: 12px
 }
 
-body div.definition>div.title mjx-container {
-	font-size: 14px
-}
-
 body div.definition>div.title code {
 	font-family: 'Menlo', monospace;
 	font-size: 13px;
@@ -641,10 +599,6 @@ body div.definition>div.explanation hr {
 body div.definition>div.explanation ol p,
 body div.definition>div.explanation ul p {
 	margin: 8px 0
-}
-
-body div.definition>div.explanation mjx-container {
-	font-size: 13.5px
 }
 
 body div.definition>div.explanation div.figure {
@@ -694,10 +648,6 @@ body div.note>div.title span.section-counter {
 	margin-right: 12px
 }
 
-body div.note>div.title mjx-container {
-	font-size: 14px
-}
-
 body div.note>div.title code {
 	font-family: 'Menlo', monospace;
 	font-size: 13px;
@@ -725,10 +675,6 @@ body div.note>div.explanation hr {
 body div.note>div.explanation ol p,
 body div.note>div.explanation ul p {
 	margin: 8px 0
-}
-
-body div.note>div.explanation mjx-container {
-	font-size: 13.5px
 }
 
 body div.note>div.explanation div.figure {
@@ -771,10 +717,6 @@ body div.warn>div.title span.section-counter {
 	margin-right: 12px
 }
 
-body div.warn>div.title mjx-container {
-	font-size: 14px
-}
-
 body div.warn>div.title code {
 	font-family: 'Menlo', monospace;
 	font-size: 13px;
@@ -802,10 +744,6 @@ body div.warn>div.explanation hr {
 body div.warn>div.explanation ol p,
 body div.warn>div.explanation ul p {
 	margin: 8px 0
-}
-
-body div.warn>div.explanation mjx-container {
-	font-size: 13.5px
 }
 
 body div.warn>div.explanation div.figure {
@@ -839,10 +777,6 @@ body div.emph span.section-counter {
 	font-size: 15px;
 	vertical-align: 0.5px;
 	margin-right: 12px
-}
-
-body div.emph mjx-container {
-	font-size: 15px
 }
 
 body div.emph code {
@@ -1035,6 +969,8 @@ mark {
 	word-spacing: 2px;
 	letter-spacing: 0.5px;
 	vertical-align: top;
+	max-width: 90%;
+    display: inline-block;
 }
 
 .toggled-block {
