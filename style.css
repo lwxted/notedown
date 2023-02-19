@@ -256,7 +256,7 @@ body p code {
 
 body ul,
 body ol {
-	font-size: 14.5px;
+	font-size: 15px;
 	padding: 0;
 	margin: 10px 0px 10px 28px;
 }
@@ -277,7 +277,7 @@ table ol {
 body ul p,
 body ol p {
 	margin: 6px 0;
-	font-size: 14.5px;
+	font-size: 15px;
 }
 
 body ul li,
