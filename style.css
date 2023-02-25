@@ -530,7 +530,7 @@ body div.figure>div.caption>div.image-counter-block>span.image-counter {
 	}
 }
 
-@media (min-width: 1280px) {
+/* @media (min-width: 1280px) {
 	body div.figure {
 		width: 842.5px
 	}
@@ -545,7 +545,7 @@ body div.figure>div.caption>div.image-counter-block>span.image-counter {
 		width: 250px;
 		float: none;
 	}
-}
+} */
 
 body div.definition {
 	border-radius: 3px;
