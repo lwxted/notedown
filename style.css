@@ -261,13 +261,6 @@ body ol {
 	margin: 10px 0px 10px 28px;
 }
 
-body ul ul,
-body ul ol,
-body ol ul,
-body ol ol {
-	margin-top: 5px;
-}
-
 
 table ul,
 table ol {
