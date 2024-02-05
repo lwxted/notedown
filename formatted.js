@@ -117,6 +117,30 @@
             },
         };
 
+        const todayInlineExtension = {
+            name: 'today',
+            level: 'inline',
+            start(src) {
+                return src.match(/\{today\}/)?.index;
+            },
+            tokenizer(src) {
+                const rule = /\{today\}/;
+                const match = rule.exec(src);
+                if (match) {
+                    const token = {
+                        type: 'today',
+                        raw: match[0],
+                        text: match[0],
+                        tokens: [],
+                    };
+                    return token;
+                }
+            },
+            renderer(token) {
+                return `<span>${new Date().toDateString().split(' ').slice(1, 3).join(' ')}</span>`;
+            },
+        };
+
         const mathInlineExtension = {
             name: 'math',
             level: 'inline',
@@ -365,6 +389,7 @@
                 renderer,
                 extensions: [
                     ...calloutBlockExtensions,
+                    todayInlineExtension,
                     mathInlineExtension,
                     highlightInlineExtension,
                     coloredTextInlineExtension,
