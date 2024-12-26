@@ -474,11 +474,13 @@ body div.figure {
 	margin-top: 20px
 }
 
-body div.figure>div.img {
+body div.figure>div.img,
+body div.figure>div.image {
 	max-width: 100%
 }
 
-body div.figure>div.img>img {
+body div.figure>div.img>img,
+body div.figure>div.image>img {
 	display: block;
 	max-width: 100%
 }
@@ -518,7 +520,8 @@ body div.figure>div.caption>div.image-counter-block>span.image-counter {
 		margin-top: 15px
 	}
 
-	body div.figure>div.img {
+	body div.figure>div.img,
+	body div.figure>div.image {
 		max-width: 100%
 	}
 }
@@ -600,7 +603,8 @@ body div.definition>div.explanation div.figure {
 	margin-bottom: 20px
 }
 
-body div.definition>div.explanation div.figure>div.img {
+body div.definition>div.explanation div.figure>div.img,
+body div.definition>div.explanation div.figure>div.image {
 	float: none
 }
 
@@ -676,7 +680,8 @@ body div.note>div.explanation div.figure {
 	margin-bottom: 20px
 }
 
-body div.note>div.explanation div.figure>div.img {
+body div.note>div.explanation div.figure>div.img,
+body div.note>div.explanation div.figure>div.image {
 	float: none
 }
 
@@ -745,7 +750,8 @@ body div.warn>div.explanation div.figure {
 	margin-bottom: 20px
 }
 
-body div.warn>div.explanation div.figure>div.img {
+body div.warn>div.explanation div.figure>div.img,
+body div.warn>div.explanation div.figure>div.image {
 	float: none
 }
 
@@ -963,7 +969,7 @@ mark {
 	letter-spacing: 0.5px;
 	vertical-align: top;
 	max-width: 90%;
-    display: inline-block;
+	display: inline-block;
 }
 
 .toggled-block {
