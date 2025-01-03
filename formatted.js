@@ -219,7 +219,7 @@
                 return src.match(new RegExp(regex))?.index;
             },
             tokenizer(src, _tokens) {
-                const regex = `^\\{(tog)(:[1-9]\\d*)?\\}\n(.*\n)([\\S\\s]*?)\\{\/(?:tog)\\2?\\}(?:\n\n*|$)`;
+                const regex = `^\\{(tog)(:pyt)?(:[1-9]\\d*)?\\}\n(.*\n)([\\S\\s]*?)\\{\/(?:tog)\\3?\\}(?:\n\n*|$)`;
                 const rule = new RegExp(regex);
                 const match = rule.exec(src);
                 if (match) {
@@ -227,9 +227,10 @@
                         type: 'toggled',
                         raw: match[0],
                         text: match[0].trim(),
-                        title: match[3].trim(),
+                        style: match[2] == null ? null : match[2].trim().substring(1),
+                        title: match[4].trim(),
                         titleTokens: [],
-                        content: match[4].trim(),
+                        content: match[5].trim(),
                         contentTokens: [],
                     }
                     this.lexer.inline(token.title, token.titleTokens);
@@ -239,15 +240,18 @@
             },
             renderer(token) {
                 toggledBlockCount++;
-                return `<div class="toggled-block">
+                return `<div class="toggled-block ${token.style == null ? "" : token.style}">
                             <input type="checkbox" id="toggled-${toggledBlockCount}">
                             <div class="clearfix toggled-header">
                                 <span class="toggled-title">
                                     ${this.parser.parseInline(token.titleTokens)}
                                 </span>
                                 <label class="prompt" for="toggled-${toggledBlockCount}">
-                                    show
+                                    &nbsp;show
                                 </label>
+                                <span class="lang-label">
+                                    ${token.style == 'pyt' ? " pytorch ": ""}
+                                </span>
                             </div>
                             <div class="toggled-content">
                                 ${this.parser.parse(token.contentTokens)}

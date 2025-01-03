@@ -933,22 +933,11 @@ mark {
 	display: none;
 }
 
-.toggled-block>.toggled-header {
-	background-color: #fafafa;
-	padding: 6px 14px;
-}
-
-.toggled-block>.toggled-content {
-	border-top: 1px solid #eee;
-	padding: 2.5px 14px;
-}
-
 .toggled-block>.toggled-content p:first-of-type {
 	margin-top: 8px;
 }
 
 .toggled-block label.prompt {
-	letter-spacing: 1px;
 	font-size: 14px;
 	word-spacing: 2px;
 	letter-spacing: 0.5px;
@@ -956,10 +945,7 @@ mark {
 	-moz-appearance: button;
 	cursor: pointer;
 	float: right;
-}
-
-.toggled-block>.toggled-content {
-	color: #444;
+	margin-top: 1px;
 }
 
 .toggled-block>.toggled-header>.toggled-title {
@@ -976,4 +962,31 @@ mark {
 	margin: 15px 0;
 	border-radius: 3px;
 	border: 1px solid #eee;
+}
+
+.toggled-block>.toggled-header {
+	background-color: #fafafa;
+	padding: 6px 14px;
+}
+
+.toggled-block>.toggled-content {
+	border-top: 1px solid #eee;
+	padding: 2.5px 14px;
+	color: #444;
+}
+
+.toggled-block>.toggled-header>.lang-label {
+	float: right;
+	font-size: 12.5px;
+	word-spacing: 2px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	border-radius: 2px;
+	padding: 1px 4px;
+	margin: 1px 5px;
+}
+
+.toggled-block.pyt>.toggled-header>.lang-label {
+	background-color: #f2765d;
+	color: #fff;
 }
