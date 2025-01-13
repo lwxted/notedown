@@ -219,15 +219,16 @@
                 return src.match(new RegExp(regex))?.index;
             },
             tokenizer(src, _tokens) {
-                const regex = `^\\{(tog)(:pyt)?(:[1-9]\\d*)?\\}\n(.*\n)([\\S\\s]*?)\\{\/(?:tog)\\3?\\}(?:\n\n*|$)`;
+                const regex = `^\\{(tog)(\\[pyt\\])?(:[1-9]\\d*)?\\}\n(.*\n)([\\S\\s]*?)\\{\/(?:tog)\\3\\}(?:\n\n*|$)`;
                 const rule = new RegExp(regex);
                 const match = rule.exec(src);
                 if (match) {
+                    console.log(match[3]);
                     const token = {
                         type: 'toggled',
                         raw: match[0],
                         text: match[0].trim(),
-                        style: match[2] == null ? null : match[2].trim().substring(1),
+                        style: match[2] == null ? null : match[2].trim().substring(1, match[2].trim().length - 1),
                         title: match[4].trim(),
                         titleTokens: [],
                         content: match[5].trim(),
