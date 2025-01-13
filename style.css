@@ -990,3 +990,9 @@ mark {
 	background-color: #f2765d;
 	color: #fff;
 }
+
+
+td div.figure {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
